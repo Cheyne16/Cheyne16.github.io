@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>NLP on Home</title>
+    <link>/categories/nlp/</link>
+    <description>Recent content in NLP on Home</description>
+    <image>
+      <title>Home</title>
+      <url>%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 08 Apr 2022 11:25:09 +0000</lastBuildDate><atom:link href="/categories/nlp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2</title>
+      <link>/posts/nlp/02english-lexical-morphology/</link>
+      <pubDate>Fri, 08 Apr 2022 11:25:09 +0000</pubDate>
+      
+      <guid>/posts/nlp/02english-lexical-morphology/</guid>
+      <description>why need this 因为基于已有词典的分词遇到未登录词（没见过的新词）时，就完了。
+可以从语料中自动获取比词更小的构词单元（subwords 子词）来解决此问题，常用算法：byte-pair encoding(BPE)。
+步骤 token learner：从语料中获取词表（token） token segmenter(parser)：基于词表（token）切分语料 实现 token learner 初始化：子词表为语料中所有单个字母符号集。 重复如下操作： 选择在语料中最频繁邻接的两个符号（如&amp;rsquo;A&amp;rsquo;, &amp;lsquo;B&amp;rsquo;）； 合并成一个新符号 &amp;lsquo;AB&amp;rsquo;，并加入词表； 将语料中所有邻接的 &amp;lsquo;A&amp;rsquo;, &amp;lsquo;B&amp;rsquo; 替换为 &amp;lsquo;AB&amp;rsquo;； 直到合并得到的新符号数量达到预定的k个。 token parser(segmenter) 给定测试语料集，在其上进行：（先拆再合）
+初始化：在每个单词末尾加 &amp;lsquo;__&amp;rsquo;，将每个词==分割==为单个字母 按训练集上的合并顺序==合并==测试集中的符号 贪婪 按训练集上学到的合并次序 不考虑测试集上的频次 </description>
+    </item>
+    
+    <item>
+      <title>4-6</title>
+      <link>/posts/nlp/04-06lexcial-semantics/</link>
+      <pubDate>Fri, 08 Apr 2022 11:25:09 +0000</pubDate>
+      
+      <guid>/posts/nlp/04-06lexcial-semantics/</guid>
+      <description>lexical semantics 词义分析
+词义 语义
+几个语言学术语 词义：词的内容
+概念义——客观 色彩义——主观 义素（Sememe）：最小词义单位，又叫语义特征 、义原等。
+义位（glosseme）：能独立运用的最小词义单位（义素）
+义素是可以通过比较分析一组相关词语的义位(义素分析法)而得到的词义的区别特征 义位是由义素合成的 义素分析法：
+确定对比分析的义位，通常是同一语义场内的一些义位 寻找义位之间的共性特征和区别性特征 将寻找出的各种义素用结构式描述出来 提供词义的词典，目前都是给人使用的，机器不能用，如何为机器提供词义呢？
+基于符号的方法 从借鉴词典的词义定义开始：用有限的基本词或者用与其他词(不一定是基本词)的关系来表达词义
+基于基本词 基于一个基本词(概念)集合来表示其他所有词的语义
+基本词是义素 (语义特征\义原)
+构建基本词集合：
+专家定义 知网（HowNet）是一个基于义原的常识知识库，基于义原揭示概念与概念之间以及概念所具有的属性之间的关系 义原定义过程：将词的关系归结到其义原间的关系 首先对汉字（单纯词）进行考察和分析，获取一些义原 然后用这些义原作为标注集去标注多音节的词，当发现这些义原不满足要求时，便进行调整或扩充 这样最终形成了2000多个义原的标注集以及由它们标注的10万个中文/英文词或短语 例：打的意思有（1）买：打酱油（2）辫编：打毛衣。那么判断”打手套“中的打是什么意思只需要比较d(手套，酱油)和d(手套，毛衣) 很多词典是基于专家确定的一些基本词而构建出来的，如Oxford学生词典：专家确定2000基础词，其他词均由基础词定义，因此从这些词典中可以获取方式 缺点：主观性，不一致，费时费力；新词不断出现、词义逐渐变化 自动发现 近年来出现了一些基于语料来自动获取基本词的研究 提出新义原还没有 基于词间关系 词间关系，主要是词义之间的关系，当词有多个义位时，看其中一义位间的关系。所以更准确地说两个词之间的关系是指这两个词的某两个义位之间的关系
+上下义位关系(Hyponymy)——名词、动词等都可以有
+上位(Superordinate上位词)：从特殊概念到一般概念 (IS-A)
+哺乳动物&amp;mdash;&amp;gt;动物
+下位(Subordinate下位词)： 从一般概念到特殊概念 (Include)
+动物&amp;mdash;&amp;gt;哺乳动物
+全体-成员关系(Ensemble-Member)
+从全体到成员关系 (Has-Member) 从成员到全体 整体-部分关系(Whole-part)
+从整体到部分: Part Meronym(Has-Part) 从部分到整体:Part Holonym(Part-Of) 同义关系(Synonymy)
+两个词(基于音、义位)之间的关系 同音词 (Homonyms) 同形(同音)异义词 (Homographs) 同形异音异义词(Heteronyms) 近义词 (Synonyms): 具有相同或相近义位的不同词 反义词(Antonyms): 互补 分级 关系 自反 换喻 (Metonyms) 用一个对象来指称另一个对象 用一个对象的属性或某个侧面来指称另一个对象 用一个属性来指称一个对象 区分：</description>
+    </item>
+    
+    <item>
+      <title>Chapter3 - Chinese Lexical Morphology</title>
+      <link>/posts/nlp/chapter3-chinese-lexical-morphology/</link>
+      <pubDate>Fri, 08 Apr 2022 11:25:09 +0000</pubDate>
+      
+      <guid>/posts/nlp/chapter3-chinese-lexical-morphology/</guid>
+      <description>汉语词形态分析 [toc]
+汉语切分基础 回顾词形态分析的两个基本任务：
+外部：断词——确定词的外部边界 内部：词形还原——内部结构分析 汉语是独立语，主要在于断词，即汉语切分/分词。词性还原基本没有。
+汉语切分任务说明 关于汉语的词的定义/看法：大方之家们各持己见 ··································································由”词“到”切分单元“：汉语切分而非汉语切词 不同的切分标注：反映在各自的切分数据上 汉语切分的两个主要难点问题 边界歧义（Boundary Ambiguity）：从哪里切分
+交集歧义（Overlap ambiguity: OA）：XJ/Y/ and X/JY/
+检测：通过FMM(正向)和BMM(负向)最大匹配算法。链长为奇数(ABC,ABCDE)的两者切分结果不同，可基于此检测到歧义；链长为偶数(ABCD)，结果相同，检测不出
+组合歧义（Combination ambiguity: CA）：X/Y/ and XY/，即 X、Y、XY都是词典中的词
+还有 混合歧义 真实歧义 伪歧义
+未登录词（Out of Vocabulary: OOV）（Unknow words）：词典/训练数据中没有此切分单元
+如：派生词、命名实体、新词 边界歧义常与OOV混合出现 朴素的切分算法——基于规则 前向最大匹配算法 FMM forward maximum match
+早期一个朴素的切分算法，基于词表
+例：
+算法参数：最大匹配长度 MaxLen = 3
+切分句子：语言学很重要
+过程：取”语言学“查词表，在其中，ok；取”很重要”，不在词表中；取“很重”，不在；取“很”，不在，但是只有一个字，ok；取“重要“，在，ok
+算法影响因素：
+MaxLen：太小，不能切对长的词；太大，经常回退；合适的=词表的平均词长+1/+2 词典 性能评估：
+评测数据（带有标准答案的数据）
+评测指标：常用 P/R/F1
+后向最大匹配算法 BMM backward maximum match
+基于规则的切分方法总结 FMM BMM
+简单快速，可以用来发现OA
+不能提供高质量的切分，没有进行不同切分选择的消歧能力：
+OA：总是切分成 XJ/Y（而BMM总是切分成 X/JY，所以用他俩可以检测歧义 CA：总是把XY切分为一个词 OOV：不能处理，一般切成单个字（也可提供某种信息） 扩展以处理歧义：</description>
+    </item>
+    
+  </channel>
+</rss>

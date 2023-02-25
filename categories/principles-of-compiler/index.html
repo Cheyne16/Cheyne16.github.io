@@ -1,0 +1,76 @@
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Principles of Compiler | Home</title><meta name=keywords content><meta name=description content="This is Chancellor16's Blog"><meta name=author content="Chan"><link rel=canonical href=/categories/principles-of-compiler/><meta name=google-site-verification content="XYZabc"><meta name=yandex-verification content="XYZabc"><meta name=msvalidate.01 content="XYZabc"><link crossorigin=anonymous href=/assets/css/stylesheet.6a98292fb8fa8cf0f3ba4042d4b75515c04267550f3ad49ff6271b5af9562443.css integrity="sha256-apgpL7j6jPDzukBC1LdVFcBCZ1UPOtSf9icbWvlWJEM=" rel="preload stylesheet" as=style><link rel=icon href=%3Clink%20/%20abs%20url%3E><link rel=icon type=image/png sizes=16x16 href=%3Clink%20/%20abs%20url%3E><link rel=icon type=image/png sizes=32x32 href=%3Clink%20/%20abs%20url%3E><link rel=apple-touch-icon href=%3Clink%20/%20abs%20url%3E><link rel=mask-icon href=%3Clink%20/%20abs%20url%3E><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate type=application/rss+xml href=/categories/principles-of-compiler/index.xml><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,t,n,s,o,i,a){e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,i=t.createElement(n),a=t.getElementsByTagName(n)[0],i.async=1,i.src=s,a.parentNode.insertBefore(i,a)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-123-45","auto"),ga("send","pageview"))</script><meta property="og:title" content="Principles of Compiler"><meta property="og:description" content="This is Chancellor16's Blog"><meta property="og:type" content="website"><meta property="og:url" content="/categories/principles-of-compiler/"><meta property="og:image" content="%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta property="og:site_name" content="Chancellor16's Blog"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta name=twitter:title content="Principles of Compiler"><meta name=twitter:description content="This is Chancellor16's Blog"></head><body class=list id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href accesskey=h title="Cheyne16's Blog (Alt + H)"><img src=/apple-touch-icon.png alt aria-label=logo height=35>Cheyne16's Blog</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=/categories/ title=categories><span>categories</span></a></li><li><a href=/tags/ title=tags><span>tags</span></a></li><li><a href=https://example.org title=example.org><span>example.org</span>&nbsp;<svg fill="none" shape-rendering="geometricPrecision" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a></li></ul></nav></header><main class=main><header class=page-header><div class=breadcrumbs><a href>Home</a>&nbsp;»&nbsp;<a href=/categories/>Categories</a></div><h1>Principles of Compiler
+<a href=index.xml title=RSS aria-label=RSS><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" height="23"><path d="M4 11a9 9 0 019 9"/><path d="M4 4a16 16 0 0116 16"/><circle cx="5" cy="19" r="1"/></svg></a></h1></header><article class="post-entry tag-entry"><header class=entry-header><h2>ch1-编译概述</h2></header><div class=entry-content><p>编译的几个过程 一、分析阶段 1. 词法分析 2. 语法分析 3. 语义分析 对语法成份（语法分析确定的层次结构）的意义进行检查分析 收集必要信息：类型、作用域等 工作依据：语义规则 重要类型：类型检查 根据规则检查每个运算符及其运算对象是否符合要求 数组的下标是否合法 过程调用时，形参与实参个数、类型是否匹配等。 二、综合阶段 4. 中间代码生成 5. 代码优化 6. 目标代码生成 三、符号表的管理 四、错误诊断和处理</p></div><footer class=entry-footer><span title='2023-02-21 16:29:43 +0000 UTC'>February 21, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;24 words&nbsp;·&nbsp;Chan</footer><a class=entry-link aria-label="post link to ch1-编译概述" href=/posts/principles-of-compiler/ch1-%E7%BC%96%E8%AF%91%E6%A6%82%E8%BF%B0/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>ch2-词法分析</h2></header><div class=entry-content><p>序 词法分析程序的作用 扫描源程序、识别单词符号、生成记号流；
+词法检查，把错误信息和源程序关联起来；
+跳过注释和空白；
+（创建符号表）。
+1 与语法分析程序的关系 独立的一遍 / 作为其子程序 / 协同
+2 词法分析程序的输入输出 实现方法 自动生成器、系统程序设计语言、汇编语言
+设置缓冲区的必要性 需要超前扫描若干个字符
+配对缓冲区 把单缓冲区分为两半。
+普通的 / 每半区带有结束标记的缓冲器
+输出 记号 模式 单词 类别编码 构词规则 一个特例 如：标识符的记号是id，常数的记号是num等 如：标识符：字母开头的字母数字串 如：position是标识符 ==记号影响语法分析的决策、属性影响记号的翻译==
+一旦识别出一个记号后，就保留下其属性，就完事了；不同于符号表，不断完善添加信息。
+3 记号的描述与识别 词法与正规文法 词法：描述语言的标识符、常数、运算符、标点符号等记号的文法 —— 正规文法 语法：借助记号来描述语言的结构的文法 —— 上下文无关文法 记号的文法 写出正规表达式/定义式，再由此写出正规文法
+标识符：一般写作： id -> letter rid ; rid -> 3 / letter rid / digit rid [rid: (letter/digit)*] 常数 整数：digits -> digit remainder ; remainder -> 3 / digit remainder [remainder: (digit)*] 无符号数：很复杂 运算符：只讲了关系运算符 分界符 关键字 状态转换图与记号的识别 状态转换图 利用状态转换图识别记号 为线性文法构造相应的状态转换图 状态集合的构成 为每个非终结状态设置一个对应状态 开始符号对应初态 增加一个新的状态：终态 状态之间边的形成 4 词法分析程序的设计与实现 文法及状态转换图 语言说明、记号的正规文法、状态转换图...</p></div><footer class=entry-footer><span title='2023-02-21 16:29:43 +0000 UTC'>February 21, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;113 words&nbsp;·&nbsp;Chan</footer><a class=entry-link aria-label="post link to ch2-词法分析" href=/posts/principles-of-compiler/ch2-%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>ch4-语法分析</h2></header><div class=entry-content><p>4.1 语法分析简介 编译程序的核心工作。
+语法分析程序的任务：
+从源程序记号序列中识别出各类语法成分 进行语法检查 语法分析程序的地位：
+由语法分析程序完成：
+输入：语义分析出的记号流/序列 工作依据：源语言的语法规则 功能任务：从记号流中识别出各类语法成分、进行语法检查 输出：分析树 错误处理 常用的分析方法：
+自顶向下 自底向上 对输入符号串的扫描顺序：自左向右
+4.2 自顶向下分析方法 1. 递归下降分析 依次试探、谋求匹配。
+试图为输入符号串建立一个==最左推导序列==。
+实践中存在的困难和缺点：
+左递归的文法，可能导致分析过程陷入死循环 ==回溯== 工作的重复 效率低、代价高：穷尽一切可能的试探法。 2. 递归调用预测分析 一种确定的、==不带回溯==的递归下降分析方法——能够根据所面临的输入符号准确地指派一个候选式去执行任务。
+对文法的要求：
+不含左递归
+非终结符号的所有候选式的FIRST集两两互不相交
+2.1 预测分析程序的构造 改写文法：重写文法、消除左递归、提取左公因子
+（1）预测分析程序的转换图 为每个非终结符号创建一个转换图，每个候选式对应一条路径：
+（2）转换图的工作过程 从文法开始符号所对应的转换图的开始状态开始分析，经过若干动作，向前分析，直到错误或到达结束状态。
+（3）转换图的化简 用代入的方法进行化简：合并减去重复的边和状态，将简化后的代入其他里面化简
+（4）预测分析程序的实现 要求用来描述预测分析程序的语言允许递归调用。
+实现举例：
+3. 非递归预测分析 使用一张分析表和一个栈联合控制，实现对输入符号串的自顶向下分析。
+3.1 预测分析程序的模型及工作过程 算法4.1 非递归预测分析方法 3.2 预测分析表的构造 （1）改写文法 （2）FIRST集合及其构造 推导出的开头终结符号集
+（3）FOLLOW集合及其构造 后面紧跟的终结符号集
+（4）算法4.2 预测分析表的构造 3.2 LL(1)文法 如果一个文法的预测分析表M不含多重定义的表项， 则称该文法为LL(1)文法。
+LL(1)的含义：
+第一个L表示从左至右扫描输入符号串 第二个L表示生成输入串的一个最左推导 1表示在决定分析程序的每步动作时，向前看一个符号 3....</p></div><footer class=entry-footer><span title='2023-02-21 16:29:43 +0000 UTC'>February 21, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;212 words&nbsp;·&nbsp;Chan</footer><a class=entry-link aria-label="post link to ch4-语法分析" href=/posts/principles-of-compiler/ch4-%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>ch5-语法制导翻译技术</h2></header><div class=entry-content><p>注释分析树：结点带有属性值的分析树
+综合属性：自下而上传递信息，通过子结点、自身的属性值来定义综合属性 （语义规则函数看成是相应产生式左部非终结符号的虚拟综合属性）
+继承属性：自上而下传递信息，通过父结点、兄弟结点、自身的属性值来定义继承属性 （终结符没有继承属性。终结符从词法分析器处获得的属性值被归为综合属性值）
+S属性定义：仅涉及综合属性的语法制导定义
+L属性定义：如果与每个产生式 A->X~1~X~2~X~3~…X~n~ 相应的每条语义规则计算的属性都是：
+A的综合属性 X~j~（1≤j≤n）的继承属性，且该继承属性仅依赖于： A的继承属性 产生式中X~j~左边的符号X~1~、X~2~、X~3~、…、X~j-1~的属性 语法制导翻译过程 1 设计语法制导定义 如图</p></div><footer class=entry-footer><span title='2023-02-21 16:29:43 +0000 UTC'>February 21, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;17 words&nbsp;·&nbsp;Chan</footer><a class=entry-link aria-label="post link to ch5-语法制导翻译技术" href=/posts/principles-of-compiler/ch5-%E8%AF%AD%E6%B3%95%E5%88%B6%E5%AF%BC%E7%BF%BB%E8%AF%91%E6%8A%80%E6%9C%AF/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>ch7-运行时环境</h2></header><div class=entry-content><p>运行时环境的内容，主要是分配数据位置，确定访问变量时的机制，过程的链接和参数传递等。
+本章主题包括存储管理、变量和数据的访问。
+存储分配的方式
+代码区和静态区位于底部，堆区向上生长，栈区向下生长
+静态分配：编译时
+动态分配：生成目标程序时
+栈式存储：与过程的调用/返回同步进行分配和回收 堆存储：手工进行回收，需要垃圾回收机制 栈式分配
+活动树
+过程调用在时间上是嵌套的，因此可以用栈来分配空间 程序所有过程活动可以用树表示 活动记录
+每个活跃的活动对应栈中的活动记录
+实参 返回值 控制链 访问链 保存的机器状态 局部数据 临时变量 调用代码序列
+调用代码序列分配空间，返回代码序列恢复机器状态
+尽量把代码放在被调用者中
+调用代码序列
+计算实参值 把返回值和原top sp放到被调者的活动记录，并增加top sp的值 被调者的保存寄存器值等状态 被调者初始化局部数据 返回代码序列
+被调用者把返回值放到与参数相邻的位置 恢复top sp和寄存器，跳转到返回地址 从实参到控制链，虽然是被调用者的活动记录，但是其是由调用者负责的 栈中的变长数据
+如果数据的生命周期局限于过程活动，那么就可以分配在栈中，变长数组也是可以的 使用两个指针，top指向实际栈顶，top sp寻找顶层记录的定长字段（有点base的感觉） 非局部数据的访问
+C语言中，全局变量在静态区，地址在编译时刻可知
+Pascal语言中，因为有嵌套过程，所以需要访问链
+访问链用于访问非局部的数据 如果过程p的声明嵌套在过程q，那么p的访问链指向上层最近的活动记录 嵌套深度：声明时的嵌套深度，最外层为1 显示表 堆管理
+存放生命周期不确定或明确被删除为止的数据对象
+例如：new -> delete, malloc -> free
+存储管理器
+C/C++需要手动回收，Java可以自动回收
+基本功能：分配一段连续，大小适当的堆空间；把被回收的空间返回空闲空间缓冲池
+评价指标：
+空间效率：使程序所需要的对空间最小 程序效率：运用内存系统的层次，使程序运行更快 低开销：使分配/收回内存的操作高效 程序的局部性：空间局部性和时间局部性
+堆空间分配方法：
+best-fit：选择满足请求的最小窗口 first-fit：放在第一个可容纳的窗口。但是总体性能会较差，但是拥有较好的数据局部性 垃圾回收
+什么是垃圾
+广义：不需要再被引用的数据 狭义：不能被引用的数据 垃圾回收：自动回收不可达数据的机制...</p></div><footer class=entry-footer><span title='2023-02-21 16:29:43 +0000 UTC'>February 21, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;121 words&nbsp;·&nbsp;Chan</footer><a class=entry-link aria-label="post link to ch7-运行时环境" href=/posts/principles-of-compiler/ch7-%E8%BF%90%E8%A1%8C%E6%97%B6%E7%8E%AF%E5%A2%83/></a></article><footer class=page-footer><nav class=pagination><a class=next href=/categories/principles-of-compiler/page/2/>Next&nbsp;&nbsp;»</a></nav></footer></main><footer class=footer><span>&copy; 2023 <a href>Home</a></span>
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script></body></html>

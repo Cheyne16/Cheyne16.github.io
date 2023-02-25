@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>ML on Home</title>
+    <link>/categories/ml/</link>
+    <description>Recent content in ML on Home</description>
+    <image>
+      <title>Home</title>
+      <url>%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="/categories/ml/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1-概率图模型</title>
+      <link>/posts/ml/1-%E6%A6%82%E7%8E%87%E5%9B%BE%E6%A8%A1%E5%9E%8B/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/ml/1-%E6%A6%82%E7%8E%87%E5%9B%BE%E6%A8%A1%E5%9E%8B/</guid>
+      <description>有向图模型（贝叶斯网络） 朴素贝叶斯分类器、隐马尔可夫模型HMM、深度信念网络DBN
+对于结点和边 y&amp;ndash;&amp;gt;x，有 P(x|y)
+依据条件独立性假设，将联合概率分布分解成简单条件概率组合，从而求得联合概率分布——学习
+通过联合概率分布，计算想要的条件概率——推断
+无向图模型（马尔可夫网络） 马尔可夫随机场、条件随机场、玻尔兹曼机、对数线性模型（最大熵模型）
+利用极大团上的势函数定义概率分布：势能函数g + 能量函数E
+马尔可夫随机场 &amp;amp;&amp;amp; 条件随机场 马尔可夫随机场 MRF 条件随机场 CRF ？什么都没给出，所有结点平行 由观测变量推测标记变量（给定观测值的MRF） 模型 生成式（对联合概率建模），HMM也是 判别式（对条件概率建模） 图类型 无向图 &amp;lt;&amp;mdash; 势函数 定义在（极大）团上，刻画团中变量的相关关系，在所偏好的变量取值上值较大 &amp;lt;&amp;mdash; 利用团上的势函数定义 联合概率 条件概率 马尔可夫性概念区分 无向图中
+全局马尔可夫性：给定两个变量子集的分离集，则这两个子集条件独立。 局部马尔可夫性：给定某变量的邻接变量，则该变量条件独立于其他变量。 成对马尔可夫性：给定所有其它变量，则两个非邻接变量条件独立。 有向图中
+局部马尔可夫性：每个随机变量在给定父节点的情况下，条件独立于它的非后代节点。 马尔科夫链的马尔可夫性（也称服从马尔可夫假设）：某节点只与前面L个节点相关。 隐马尔可夫模型中的两个假设：（条件独立性假设）某一时刻的观测变量仅依赖于状态变量；（一阶马尔可夫假设）t+1时刻的状态变量仅依赖于 t 时刻的状态变量；前两条可推出第三条：观测变量是条件独立的。 HMM关注的问题 推断问题：
+推断观测序列的似然：计算$P(O|λ)$ 推断最可能的隐序列 推断现在 推断过去 推断未来 学习问题：
+求模型参数 ：最大化给定观测序列出现的概率 精确推断 近似推断 变分推断 采样法 Sampling method 我们知道了一个变量的分布，要生成一批样本服从这个分布，这个过程就叫采样。听起来好像很简单，对一些简单的分布函数确实如此，比如，均匀分布、正太分布，但只要分布函数稍微复杂一点，采样这个事情就没那么简单了。
+在讲具体的采样方法之前，有必要弄清楚采样的目的。为什么要采样呢？有人可能会这样想，样本一般是用来估计分布参数的，现在我都知道分布函数了，还采样干嘛呢？其实采样不只是可以用来估计分布参数，还有其他用途，比如说用来估计分布的期望、高阶动量等。其实在机器学习中，采样的主要用途是用来估计某个函数在某个分布上的期望 ，比如在EM算法中，计算E步的时候，已知隐变量的分布，用采样的方法估计对数似然的期望。
+也称为蒙特卡罗方法 (Monte Carlo method)，或统计模拟方法。
+对于简单的分布，直接随机采样或间接采样。
+对于更复杂的分布：</description>
+    </item>
+    
+    <item>
+      <title>2-聚类分析</title>
+      <link>/posts/ml/2-%E8%81%9A%E7%B1%BB%E5%88%86%E6%9E%90/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/ml/2-%E8%81%9A%E7%B1%BB%E5%88%86%E6%9E%90/</guid>
+      <description>有监督学习：分类、回归、目标检测、语义切分、图像描述。
+无监督学习：学习关于数据的某种隐藏结构。聚类、特征降维、特征学习、密度估计。
+聚类 类簇划分的角度：
+良态可分类 基于最近邻的聚类 基于密度的聚类 基于中心点的聚类 基于共有属性或概念的聚类 聚类方法：
+基于划分（Partitional Clustering） 基于层次（Hierarchical clustering） 自顶向下 自底向上 其它： 排它性聚类 vs. 非排它性聚类 模糊聚类 vs. 非模糊聚类 部分聚类 vs. 完全聚类 异构型聚类 vs. 同构型聚类 聚类模型 K-means 基于中心点
+思想：类内距离最小化，类间距离最大化
+算法过程：
+假设有k个类簇，每个簇一个中心点(centriod)【中心点可看作有监督学习中的标签y】
+将每个样本点划分到距离最近的中心点所属的簇中
+迭代：
+更新每个簇的中心点 然后重新划分 直到中心点不变
+转换为有监督学习模型 目标函数：每个样本点与其簇中心点的距离之和。这里的距离可以是各种距离。
+μk 表示簇Ck 的中心点（或其它能代表Ck的点） 若x~n~被划分到簇C~k~则r~nk~=1，否则r~nk~= 0 优化目标：找到簇的中心点μk及簇的划分r~nk~使得目标函数SSE最小
+算法过程：
+choose some initial values for the μ~k~ (k=1,&amp;hellip;,K)
+迭代：
+minimize SSE with respect to the r~nk~ (n=1,&amp;hellip;,N)
+minimize SSE with respect to the m~k~</description>
+    </item>
+    
+    <item>
+      <title>3-特征降维和特征学习</title>
+      <link>/posts/ml/3-%E7%89%B9%E5%BE%81%E9%99%8D%E7%BB%B4%E5%92%8C%E7%89%B9%E5%BE%81%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/ml/3-%E7%89%B9%E5%BE%81%E9%99%8D%E7%BB%B4%E5%92%8C%E7%89%B9%E5%BE%81%E5%AD%A6%E4%B9%A0/</guid>
+      <description>深度学习 &amp;lt;&amp;mdash; 无监督特征学习
+介绍 特征是关于样本属性和特性的集中描述。多特征大样本提供了丰富的信息，然而
+采集大规模数据往往很困难 一些特征区分样本的能力可能较差 一些特征之间可能存在相关性（房屋年龄、房屋新旧程度） 盲目减少特征可能损失很多信息 为什么要特征降维（特征选择）：发现主要的特征
+为什么要特征学习：有效的表示特征
+有哪些数学手段：
+主成分分析（ Principle Component Analysis ） 独立成分分析（Independent Component Analysis） 线性判别分析（ Linear Discriminant Analysis） 等 PCA 通过特征值分解获取原始数据的新的特征或表示（主成分）：
+是原始特征或表示的线性组合 彼此不相关（正交） 尽可能多地捕捉样本的原始方差 基本概念 方差、协方差：度量偏离均值的程度
+方差：描述某一维度上的偏离程度
+协方差：描述两个变量偏离各自均值的程度，从而表现其相关程度
+协方差矩阵：描述多个变量。。。
+步骤 结果：特征降维后得到正交的特征，且每一维的方差都很大
+目标：寻找能够解释输入数据的方差的一组少量的正交的“方向”，将输入数据映射到这些“方向”上
+假设：
+数据是连续的（实际是离散的） 输入数据和学习得到的表示成线性关系 过程：
+数据中心化（减去均值） 计算特征协方差矩阵C~d×d~ 计算C的m个最大特征值及其对应的特征向量~m×m~：得到m个主成分 Tips：通过np.linalg.eig计算得到的特征值并不是按照一定次序排列的，特征向量的每一列对应每一个特征值。 这些特征向量构成新的矩阵U~d×m~，进而将每一个d维的样本x映射到新的低维向量 z~m×1~ = U^T^~m×d~x~d×1~==（为什么不生成1×m的？一般的数据应该都是横向量吧？maybe：np.cov计算时默认每一行是一个属性，每一列是一个样本，可能这是规范形式）== 与SVD词向量分解不同之处：分解的原始矩阵不同，SVD是词共现矩阵。
+两种证明思路 两种视角：最大化方差、最小化错误（等价的）
+最大化方差 直觉：因为方差包含重要信息，所以希望降维后方差依然很大 计算：给定一个初始方向，计算样本点映射后的方差，优化方向使方差最大。 结果：公式推导可得，方差=协方差矩阵的特征值，所以，要使方差最大，应选择最大的特征值，用这些特征值对应的特征向量，构建新的正交基。有了正交基，即可计算样本点降维后的表示。 最小化错误（最小化重构误差） 基本思想：降维后的x与原来的x相差越小越好 计算：公式推导得，误差应取协方差矩阵的(d-m)个最小特征值的和 结果：构成主成分子空间的特征向量就是协方差矩阵的m个最大特征值所对应的特征向量 总结 简单有效
+非线性问题PCA则无法发挥其作用
+多数情况下，难以解释PCA所保持的主成分的意义
+PCA将所有的样本作为一个整体对待，而忽略了类别属性
+Autoencoder Autoencoder是一种采用无监督方式进行 特征学习的神经网络。</description>
+    </item>
+    
+    <item>
+      <title>4-生成模型&#43;VAE</title>
+      <link>/posts/ml/4-%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B&#43;vae/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/ml/4-%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B&#43;vae/</guid>
+      <description>判别模型——给定X, Y，通过学习判别函数 f(x, y) 或 y = f(x) 来建模条件分布 P(Y|X)
+​	——不能建模 P(X) 或 P(x, y)，所以不能生成新的X
+生成模型——Y不是必须的。建模 P(x), P(x, y), P(X|Y)等，能生成新的X
+如何构建生成模型：
+显式密度估计：显式定义和求解p~model~(x)（最大似然估计法、近似法、马尔科夫链方法） 隐式密度估计：不显式定义p~model~(x)，而是学习一个可以从p~model~(x)中采样的模型，目标使X的采样概率似然最大 下面讲显式密度估计中的变分自动编码器，下次讲GAN
+P(X)的极大似然估计 过程：采样$x_i$，计算概率$p(x_i)$，优化参数使概率 $\prod_{i}{}{p(x_i)}$ 最大
+计算：通过log，推导得：最优参数=使原始分布和采样分布最接近（KL散度最小）的值
+问题：在缺少领域知识的先验，对生成过程不了解时， 假设的分布基本都是错误的；如果选择的分布和真实分布不一致时，结果可 能很差；参数规模巨大，例如28 * 28维的手写数字，均值 和协方差的参数规模是784+784*784
+解决方案：
+引入隐变量模型，先找到一些要素z，然后再由z生成x。然后做MLE。
+p(x|z; θ) 可以用 f(z, θ) 逼近，进而把概率密度 估计问题转化更加容易求解的函数逼近问题。
+基本假设：任何一个概率分布经过一个足够复杂的函数后可以 映射到任意概率分布。
+然而关于参数的梯度中分子分母中关于连续变量z的积分难以计算！
+蒙特卡罗采样法 变分推断（VI）&amp;mdash;&amp;gt; VAE 变分自动编码器 Variational inference (VI)：机器学习中 ，变分推断是一种通过最优化的方 法近似估计概率的方法。VI背后的思想是提出一个分布家族，进一步从 中得到一个接近目标分布的分布，接近程度通 常用Kullback-Leibler散度计算
+AutoEncoder：一种从无标记数据中，学习其低维特征表示的 无监督方法
+基本思想 假设样本是从一个不可观测的隐变量z生成的，即
+将直接求解p(x)化简为两步：
+从先验分布 p~θ*~(z) 中抽样一个 z 从条件分布 p~θ*~(x|z^i^) 中抽样得到 x 目标：估计生成模型的真实参数 θ*</description>
+    </item>
+    
+    <item>
+      <title>5-GAN</title>
+      <link>/posts/ml/5-gan/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/ml/5-gan/</guid>
+      <description>VAE与GAN：
+Generative：学习一个生成模型
+Adversarial：在对抗学习的设置下训练模型
+Networks：深度神经网络
+对抗学习的思想 对抗学习是一种机器学习领域常用的学习策略， 通过引入假样本迷惑模型（增强模型的鲁棒性、 降低过拟合）
+一般实现方式：
+构造对抗任务：生成对抗样本以迷惑判别模型（★★★） 促使模型在完成主任务的时候，同时完成对抗任务 重复训练过程，提升判别模型的学习能力 GAN的基本思想 GANs 将上述思想拓展到生成模型，基本思想是训练两个网络：生成器和判别器，二者对抗训练，获得更好的生成器和判别器。
+GAN组织结构 整体结构：
+Z 是样本的隐变量表示，也被称为随机噪声。
+训练过程：将生成的样本和真实样本一起交给判别器做判断，误差反传轮流更新判别器参数和生成器参数：
+最终，通过充分训练，渴望算法收敛于一个好的关于数据分布的估计p~g~，即由它生成的样本无法被判别器清楚分辨是真是假。同时，训练出一个好的判别器D，即给定任意的生成器G，训练判别器D的标准是最大化V (G, D) 。
+具体代价函数 判别器 判别器是一个分类器，试图为生成的数据输出0，为真实的数据输出1，min代价函数：
+生成器 生成器希望判别器输出为1，min代价函数：
+极大极小博弈（minimax game） 生成器和判别器之间互为对抗的零和博弈 （zero-sum game）</description>
+    </item>
+    
+    <item>
+      <title>6-RNN</title>
+      <link>/posts/ml/6-rnn/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/ml/6-rnn/</guid>
+      <description> 序列学习：给定训练样例$(x, y)$，二者皆为序列或只有一个是序列，找一个$f$将$x$映射到$y$。特别地，若$x,y$长度相同，称为序列标注。
+RNN：将HMM中的分布函数变成判别函数
+序列内部的关联$f_\theta(h)$ 序列之间的关系$g_w(h)$ </description>
+    </item>
+    
+    <item>
+      <title>决策树</title>
+      <link>/posts/ml/%E5%86%B3%E7%AD%96%E6%A0%91/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/ml/%E5%86%B3%E7%AD%96%E6%A0%91/</guid>
+      <description>ID3 entropy
+conditional entropy
+information gain
+find min(conditional entropy) to get max(information gain)
+Occam&amp;rsquo;s razor: Entities are not to be multiplied beyond necessity (law of parsimony).
+C4.5 information-gain ratio
+choose max(information-gain ratio)
+for continuous-valued attributes: find the threshold.
+for unknown attribute values: ignore the unknown then calc; divide the sample by weight.
+CART-CLASSIFICATION TREE Gini In=dex [p~k~ for k~th~ class]=
+Gini index for binary classification problem [p for 1~th~ class]</description>
+    </item>
+    
+  </channel>
+</rss>

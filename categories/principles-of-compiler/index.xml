@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Principles of Compiler on Home</title>
+    <link>/categories/principles-of-compiler/</link>
+    <description>Recent content in Principles of Compiler on Home</description>
+    <image>
+      <title>Home</title>
+      <url>%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 21 Feb 2023 16:29:43 +0000</lastBuildDate><atom:link href="/categories/principles-of-compiler/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ch1-编译概述</title>
+      <link>/posts/principles-of-compiler/ch1-%E7%BC%96%E8%AF%91%E6%A6%82%E8%BF%B0/</link>
+      <pubDate>Tue, 21 Feb 2023 16:29:43 +0000</pubDate>
+      
+      <guid>/posts/principles-of-compiler/ch1-%E7%BC%96%E8%AF%91%E6%A6%82%E8%BF%B0/</guid>
+      <description>编译的几个过程 一、分析阶段 1. 词法分析 2. 语法分析 3. 语义分析 对语法成份（语法分析确定的层次结构）的意义进行检查分析 收集必要信息：类型、作用域等 工作依据：语义规则 重要类型：类型检查 根据规则检查每个运算符及其运算对象是否符合要求 数组的下标是否合法 过程调用时，形参与实参个数、类型是否匹配等。 二、综合阶段 4. 中间代码生成 5. 代码优化 6. 目标代码生成 三、符号表的管理 四、错误诊断和处理 </description>
+    </item>
+    
+    <item>
+      <title>ch2-词法分析</title>
+      <link>/posts/principles-of-compiler/ch2-%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90/</link>
+      <pubDate>Tue, 21 Feb 2023 16:29:43 +0000</pubDate>
+      
+      <guid>/posts/principles-of-compiler/ch2-%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90/</guid>
+      <description>序 词法分析程序的作用 扫描源程序、识别单词符号、生成记号流；
+词法检查，把错误信息和源程序关联起来；
+跳过注释和空白；
+（创建符号表）。
+1 与语法分析程序的关系 独立的一遍 / 作为其子程序 / 协同
+2 词法分析程序的输入输出 实现方法 自动生成器、系统程序设计语言、汇编语言
+设置缓冲区的必要性 需要超前扫描若干个字符
+配对缓冲区 把单缓冲区分为两半。
+普通的 / 每半区带有结束标记的缓冲器
+输出 记号 模式 单词 类别编码 构词规则 一个特例 如：标识符的记号是id，常数的记号是num等 如：标识符：字母开头的字母数字串 如：position是标识符 ==记号影响语法分析的决策、属性影响记号的翻译==
+一旦识别出一个记号后，就保留下其属性，就完事了；不同于符号表，不断完善添加信息。
+3 记号的描述与识别 词法与正规文法 词法：描述语言的标识符、常数、运算符、标点符号等记号的文法 —— 正规文法 语法：借助记号来描述语言的结构的文法 —— 上下文无关文法 记号的文法 写出正规表达式/定义式，再由此写出正规文法
+标识符：一般写作： id -&amp;gt; letter rid ; rid -&amp;gt; 3 / letter rid / digit rid [rid: (letter/digit)*] 常数 整数：digits -&amp;gt; digit remainder ; remainder -&amp;gt; 3 / digit remainder [remainder: (digit)*] 无符号数：很复杂 运算符：只讲了关系运算符 分界符 关键字 状态转换图与记号的识别 状态转换图 利用状态转换图识别记号 为线性文法构造相应的状态转换图 状态集合的构成 为每个非终结状态设置一个对应状态 开始符号对应初态 增加一个新的状态：终态 状态之间边的形成 4 词法分析程序的设计与实现 文法及状态转换图 语言说明、记号的正规文法、状态转换图</description>
+    </item>
+    
+    <item>
+      <title>ch4-语法分析</title>
+      <link>/posts/principles-of-compiler/ch4-%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90/</link>
+      <pubDate>Tue, 21 Feb 2023 16:29:43 +0000</pubDate>
+      
+      <guid>/posts/principles-of-compiler/ch4-%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90/</guid>
+      <description>4.1 语法分析简介 编译程序的核心工作。
+语法分析程序的任务：
+从源程序记号序列中识别出各类语法成分 进行语法检查 语法分析程序的地位：
+由语法分析程序完成：
+输入：语义分析出的记号流/序列 工作依据：源语言的语法规则 功能任务：从记号流中识别出各类语法成分、进行语法检查 输出：分析树 错误处理 常用的分析方法：
+自顶向下 自底向上 对输入符号串的扫描顺序：自左向右
+4.2 自顶向下分析方法 1. 递归下降分析 依次试探、谋求匹配。
+试图为输入符号串建立一个==最左推导序列==。
+实践中存在的困难和缺点：
+左递归的文法，可能导致分析过程陷入死循环 ==回溯== 工作的重复 效率低、代价高：穷尽一切可能的试探法。 2. 递归调用预测分析 一种确定的、==不带回溯==的递归下降分析方法——能够根据所面临的输入符号准确地指派一个候选式去执行任务。
+对文法的要求：
+不含左递归
+非终结符号的所有候选式的FIRST集两两互不相交
+2.1 预测分析程序的构造 改写文法：重写文法、消除左递归、提取左公因子
+（1）预测分析程序的转换图 为每个非终结符号创建一个转换图，每个候选式对应一条路径：
+（2）转换图的工作过程 从文法开始符号所对应的转换图的开始状态开始分析，经过若干动作，向前分析，直到错误或到达结束状态。
+（3）转换图的化简 用代入的方法进行化简：合并减去重复的边和状态，将简化后的代入其他里面化简
+（4）预测分析程序的实现 要求用来描述预测分析程序的语言允许递归调用。
+实现举例：
+3. 非递归预测分析 使用一张分析表和一个栈联合控制，实现对输入符号串的自顶向下分析。
+3.1 预测分析程序的模型及工作过程 算法4.1 非递归预测分析方法 3.2 预测分析表的构造 （1）改写文法 （2）FIRST集合及其构造 推导出的开头终结符号集
+（3）FOLLOW集合及其构造 后面紧跟的终结符号集
+（4）算法4.2 预测分析表的构造 3.2 LL(1)文法 如果一个文法的预测分析表M不含多重定义的表项， 则称该文法为LL(1)文法。
+LL(1)的含义：
+第一个L表示从左至右扫描输入符号串 第二个L表示生成输入串的一个最左推导 1表示在决定分析程序的每步动作时，向前看一个符号 3.</description>
+    </item>
+    
+    <item>
+      <title>ch5-语法制导翻译技术</title>
+      <link>/posts/principles-of-compiler/ch5-%E8%AF%AD%E6%B3%95%E5%88%B6%E5%AF%BC%E7%BF%BB%E8%AF%91%E6%8A%80%E6%9C%AF/</link>
+      <pubDate>Tue, 21 Feb 2023 16:29:43 +0000</pubDate>
+      
+      <guid>/posts/principles-of-compiler/ch5-%E8%AF%AD%E6%B3%95%E5%88%B6%E5%AF%BC%E7%BF%BB%E8%AF%91%E6%8A%80%E6%9C%AF/</guid>
+      <description>注释分析树：结点带有属性值的分析树
+综合属性：自下而上传递信息，通过子结点、自身的属性值来定义综合属性 （语义规则函数看成是相应产生式左部非终结符号的虚拟综合属性）
+继承属性：自上而下传递信息，通过父结点、兄弟结点、自身的属性值来定义继承属性 （终结符没有继承属性。终结符从词法分析器处获得的属性值被归为综合属性值）
+S属性定义：仅涉及综合属性的语法制导定义
+L属性定义：如果与每个产生式 A-&amp;gt;X~1~X~2~X~3~&amp;hellip;X~n~ 相应的每条语义规则计算的属性都是：
+A的综合属性 X~j~（1≤j≤n）的继承属性，且该继承属性仅依赖于： A的继承属性 产生式中X~j~左边的符号X~1~、X~2~、X~3~、&amp;hellip;、X~j-1~的属性 语法制导翻译过程 1 设计语法制导定义 如图</description>
+    </item>
+    
+    <item>
+      <title>ch7-运行时环境</title>
+      <link>/posts/principles-of-compiler/ch7-%E8%BF%90%E8%A1%8C%E6%97%B6%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Tue, 21 Feb 2023 16:29:43 +0000</pubDate>
+      
+      <guid>/posts/principles-of-compiler/ch7-%E8%BF%90%E8%A1%8C%E6%97%B6%E7%8E%AF%E5%A2%83/</guid>
+      <description>运行时环境的内容，主要是分配数据位置，确定访问变量时的机制，过程的链接和参数传递等。
+本章主题包括存储管理、变量和数据的访问。
+存储分配的方式
+代码区和静态区位于底部，堆区向上生长，栈区向下生长
+静态分配：编译时
+动态分配：生成目标程序时
+栈式存储：与过程的调用/返回同步进行分配和回收 堆存储：手工进行回收，需要垃圾回收机制 栈式分配
+活动树
+过程调用在时间上是嵌套的，因此可以用栈来分配空间 程序所有过程活动可以用树表示 活动记录
+每个活跃的活动对应栈中的活动记录
+实参 返回值 控制链 访问链 保存的机器状态 局部数据 临时变量 调用代码序列
+调用代码序列分配空间，返回代码序列恢复机器状态
+尽量把代码放在被调用者中
+调用代码序列
+计算实参值 把返回值和原top sp放到被调者的活动记录，并增加top sp的值 被调者的保存寄存器值等状态 被调者初始化局部数据 返回代码序列
+被调用者把返回值放到与参数相邻的位置 恢复top sp和寄存器，跳转到返回地址 从实参到控制链，虽然是被调用者的活动记录，但是其是由调用者负责的 栈中的变长数据
+如果数据的生命周期局限于过程活动，那么就可以分配在栈中，变长数组也是可以的 使用两个指针，top指向实际栈顶，top sp寻找顶层记录的定长字段（有点base的感觉） 非局部数据的访问
+C语言中，全局变量在静态区，地址在编译时刻可知
+Pascal语言中，因为有嵌套过程，所以需要访问链
+访问链用于访问非局部的数据 如果过程p的声明嵌套在过程q，那么p的访问链指向上层最近的活动记录 嵌套深度：声明时的嵌套深度，最外层为1 显示表 堆管理
+存放生命周期不确定或明确被删除为止的数据对象
+例如：new -&amp;gt; delete, malloc -&amp;gt; free
+存储管理器
+C/C++需要手动回收，Java可以自动回收
+基本功能：分配一段连续，大小适当的堆空间；把被回收的空间返回空闲空间缓冲池
+评价指标：
+空间效率：使程序所需要的对空间最小 程序效率：运用内存系统的层次，使程序运行更快 低开销：使分配/收回内存的操作高效 程序的局部性：空间局部性和时间局部性
+堆空间分配方法：
+best-fit：选择满足请求的最小窗口 first-fit：放在第一个可容纳的窗口。但是总体性能会较差，但是拥有较好的数据局部性 垃圾回收
+什么是垃圾
+广义：不需要再被引用的数据 狭义：不能被引用的数据 垃圾回收：自动回收不可达数据的机制</description>
+    </item>
+    
+    <item>
+      <title>概念</title>
+      <link>/posts/principles-of-compiler/%E6%A6%82%E5%BF%B5/</link>
+      <pubDate>Tue, 21 Feb 2023 16:29:43 +0000</pubDate>
+      
+      <guid>/posts/principles-of-compiler/%E6%A6%82%E5%BF%B5/</guid>
+      <description>短语 简单短语 句柄 </description>
+    </item>
+    
+  </channel>
+</rss>

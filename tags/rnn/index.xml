@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>RNN on Home</title>
+    <link>/tags/rnn/</link>
+    <description>Recent content in RNN on Home</description>
+    <image>
+      <title>Home</title>
+      <url>%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="/tags/rnn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>6-RNN</title>
+      <link>/posts/ml/6-rnn/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/ml/6-rnn/</guid>
+      <description> 序列学习：给定训练样例$(x, y)$，二者皆为序列或只有一个是序列，找一个$f$将$x$映射到$y$。特别地，若$x,y$长度相同，称为序列标注。
+RNN：将HMM中的分布函数变成判别函数
+序列内部的关联$f_\theta(h)$ 序列之间的关系$g_w(h)$ </description>
+    </item>
+    
+  </channel>
+</rss>

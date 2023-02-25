@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>概率图模型，贝叶斯，马尔可夫，场 on Home</title>
+    <link>/tags/%E6%A6%82%E7%8E%87%E5%9B%BE%E6%A8%A1%E5%9E%8B%E8%B4%9D%E5%8F%B6%E6%96%AF%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E5%9C%BA/</link>
+    <description>Recent content in 概率图模型，贝叶斯，马尔可夫，场 on Home</description>
+    <image>
+      <title>Home</title>
+      <url>%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="/tags/%E6%A6%82%E7%8E%87%E5%9B%BE%E6%A8%A1%E5%9E%8B%E8%B4%9D%E5%8F%B6%E6%96%AF%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E5%9C%BA/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1-概率图模型</title>
+      <link>/posts/ml/1-%E6%A6%82%E7%8E%87%E5%9B%BE%E6%A8%A1%E5%9E%8B/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/ml/1-%E6%A6%82%E7%8E%87%E5%9B%BE%E6%A8%A1%E5%9E%8B/</guid>
+      <description>有向图模型（贝叶斯网络） 朴素贝叶斯分类器、隐马尔可夫模型HMM、深度信念网络DBN
+对于结点和边 y&amp;ndash;&amp;gt;x，有 P(x|y)
+依据条件独立性假设，将联合概率分布分解成简单条件概率组合，从而求得联合概率分布——学习
+通过联合概率分布，计算想要的条件概率——推断
+无向图模型（马尔可夫网络） 马尔可夫随机场、条件随机场、玻尔兹曼机、对数线性模型（最大熵模型）
+利用极大团上的势函数定义概率分布：势能函数g + 能量函数E
+马尔可夫随机场 &amp;amp;&amp;amp; 条件随机场 马尔可夫随机场 MRF 条件随机场 CRF ？什么都没给出，所有结点平行 由观测变量推测标记变量（给定观测值的MRF） 模型 生成式（对联合概率建模），HMM也是 判别式（对条件概率建模） 图类型 无向图 &amp;lt;&amp;mdash; 势函数 定义在（极大）团上，刻画团中变量的相关关系，在所偏好的变量取值上值较大 &amp;lt;&amp;mdash; 利用团上的势函数定义 联合概率 条件概率 马尔可夫性概念区分 无向图中
+全局马尔可夫性：给定两个变量子集的分离集，则这两个子集条件独立。 局部马尔可夫性：给定某变量的邻接变量，则该变量条件独立于其他变量。 成对马尔可夫性：给定所有其它变量，则两个非邻接变量条件独立。 有向图中
+局部马尔可夫性：每个随机变量在给定父节点的情况下，条件独立于它的非后代节点。 马尔科夫链的马尔可夫性（也称服从马尔可夫假设）：某节点只与前面L个节点相关。 隐马尔可夫模型中的两个假设：（条件独立性假设）某一时刻的观测变量仅依赖于状态变量；（一阶马尔可夫假设）t+1时刻的状态变量仅依赖于 t 时刻的状态变量；前两条可推出第三条：观测变量是条件独立的。 HMM关注的问题 推断问题：
+推断观测序列的似然：计算$P(O|λ)$ 推断最可能的隐序列 推断现在 推断过去 推断未来 学习问题：
+求模型参数 ：最大化给定观测序列出现的概率 精确推断 近似推断 变分推断 采样法 Sampling method 我们知道了一个变量的分布，要生成一批样本服从这个分布，这个过程就叫采样。听起来好像很简单，对一些简单的分布函数确实如此，比如，均匀分布、正太分布，但只要分布函数稍微复杂一点，采样这个事情就没那么简单了。
+在讲具体的采样方法之前，有必要弄清楚采样的目的。为什么要采样呢？有人可能会这样想，样本一般是用来估计分布参数的，现在我都知道分布函数了，还采样干嘛呢？其实采样不只是可以用来估计分布参数，还有其他用途，比如说用来估计分布的期望、高阶动量等。其实在机器学习中，采样的主要用途是用来估计某个函数在某个分布上的期望 ，比如在EM算法中，计算E步的时候，已知隐变量的分布，用采样的方法估计对数似然的期望。
+也称为蒙特卡罗方法 (Monte Carlo method)，或统计模拟方法。
+对于简单的分布，直接随机采样或间接采样。
+对于更复杂的分布：</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>DS on Home</title>
+    <link>/categories/ds/</link>
+    <description>Recent content in DS on Home</description>
+    <image>
+      <title>Home</title>
+      <url>%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 15 Nov 2022 00:08:41 +0000</lastBuildDate><atom:link href="/categories/ds/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>第8章 排序</title>
+      <link>/posts/ds/%E7%AC%AC8%E7%AB%A0-%E6%8E%92%E5%BA%8F/</link>
+      <pubDate>Tue, 15 Nov 2022 00:08:41 +0000</pubDate>
+      
+      <guid>/posts/ds/%E7%AC%AC8%E7%AB%A0-%E6%8E%92%E5%BA%8F/</guid>
+      <description>概念 排序算法的稳定性：排序之后元素的相对顺序不变。
+稳定的是否一定比不稳定的好：不一定，看实际需求。
+分类：
+内部排序：数据都在内存中——关注时间、空间复杂度 外部排序：数据太多，无法全部放入内存——还要关注如何使磁盘读写次数更少 插入排序 直接插入排序 普通实现：
+void InsertSort(int A[], int n) { int i, j, temp; for (i=1; i&amp;lt;n; i++) if (A[i]&amp;lt;A[i-1]) { temp = A[i]; for (j=i-1; j&amp;gt;=0 &amp;amp;&amp;amp; A[j]&amp;gt;temp; --j) A[j+1] = A[j]; A[j+1] = temp; } } 带哨兵实现：不用每轮都判断 j&amp;gt;=0
+void InsertSort(int A[], int n) { int i, j; for (i=2; i&amp;lt;n; i++) if (A[i]&amp;lt;A[i-1]) { A[0] = A[i]; for (j=i-1; A[j]&amp;gt;A[0]; --j) A[j+1] = A[j]; A[j+1] = A[0]; } } 算法效率分析：</description>
+    </item>
+    
+    <item>
+      <title>第7章 查找</title>
+      <link>/posts/ds/%E7%AC%AC7%E7%AB%A0-%E6%9F%A5%E6%89%BE/</link>
+      <pubDate>Tue, 15 Nov 2022 00:08:33 +0000</pubDate>
+      
+      <guid>/posts/ds/%E7%AC%AC7%E7%AB%A0-%E6%9F%A5%E6%89%BE/</guid>
+      <description>概念 关键字：唯一标识数据元素的数据项。
+查找表分为静态、动态。
+查找算法的评价指标：
+评价一个查找算法的效率时，通常考虑查找成功/失败两种情况的ASL。
+ASL的数量级反应了查找算法时间复杂度。
+顺序查找 又称==线性查找==，通常用于线性表，适用于==顺序链式、有序无序==都可。
+一般的 以顺序表、不带哨兵为例：
+typedef struct { ElemType *elem; // 动态数组基址 int TableLen; } int Search_Seq(SSTable ST, ElemType key) { int i; for (i=0; i&amp;lt;ST.TableLen &amp;amp;&amp;amp; ST.elem[i]!=key; ++i) return i==ST.TableLen ? -1 : i; } 可在0号位置设置“哨兵”，从尾部向头部挨个查找，优点是：循环时无需判断下标是否越界。
+ASL：
+成功：$\frac{1+2+3+···+n}{n}=\frac{n+1}{2}$，O(n) 失败：$n+1$，O(n) 优化的 若==元素有序==：当前关键字大于（或小于）目标关键字时，查找失败。查找失败的ASL变小（查找成功的ASL没有变小）
+查找判定树：
+n个成功结点，n+1个失败结点。
+成功结点的查找长度 = 自身所在层数
+失败结点的查找长度 = 其父结点所在层数
+若各个关键字==被查概率不等==：可按概率降序排列，使查找成功时ASL更小（查找失败的ASL没有变小）
+折半查找 又称==二分查找==，仅适用于==有序==的==顺序表==。
+实现：可以看出，取下标为mid的元素值，要求随机访问的特性，所以仅适用于顺序表，不适用于链表。
+查找效率分析：
+由于查找次数不超过树高，所以时间复杂度为O(log~2~n)
+示例：
+顺序查找时间复杂度为O(n)，那么折半查找是否一定比顺序查找快？——不一定，看具体情况，如：
+判定树 构造：
+性质：
+是平衡二叉排序树 只有最下面一层不满，所以树高为 h = log~2~(n+1)取下界，和完全二叉树高度相同 成功结点n个，失败结点n+1个（等于成功结点的空链域数量） 拓展：当时，判定树怎么画：</description>
+    </item>
+    
+    <item>
+      <title>第6章 图</title>
+      <link>/posts/ds/%E7%AC%AC6%E7%AB%A0-%E5%9B%BE/</link>
+      <pubDate>Mon, 14 Nov 2022 23:51:17 +0000</pubDate>
+      
+      <guid>/posts/ds/%E7%AC%AC6%E7%AB%A0-%E5%9B%BE/</guid>
+      <description>概念 图G由顶点集V和边集E组成。|V|表示图中顶点的个数，也称为图的阶。|E|表示边的条数。
+树可以是空树，但图不可以空，可以没有边，不能没有顶点。
+顶点的度：
+无向图：全部顶点的度的和等于边数的2倍 有向图：全部顶点的入度之和=出度之和=边数 简单图（默认）：不存在重复边、到自身的边 多重图：存在重复边，或到自身的边
+简单路径：顶点不重复出现 简单回路：除起点和终点外，其余顶点不重复出现
+针对无向图
+连通：两个顶点之间存在路径
+连通图：任意两个顶点间存在路径 连通分量：
+连通图的生成树：包含所有顶点、尽可能少的边。n个顶点，n-1条边。少一条边则不连通，多一条边则形成回
+非连通图的生成森林：连通分量的生成树构成生成森林。
+针对有向图
+强连通：两个顶点之间存在往来路径
+强连通图：任意两个顶点之间存在往来路径 强连通分量：
+子图：V&amp;rsquo;是V的子集，E&amp;rsquo;是E的子集，且能构成图 生成子图：V&amp;rsquo;=V
+完全图：任意两个顶点间都存在边（或方向相反的两条弧）
+图的存储 邻接矩阵 空间复杂度：O(|V|^2^)。
+不带权
+带权
+性质
+邻接表 类似树的孩子表示法。
+邻接表表示方式不唯一，因为指向相邻结点的顺序不一定。
+无向图：O(|V|+2|E|)，一条边会存储两次，冗余，删除顶点删除边等操作时间复杂度高。
+有向图：O(|V|+|E|)
+邻接矩阵 vs 邻接表 十字链表 只能用于有向图。
+弥补邻接矩阵和临界表的缺点：即节省空间，又方便找到找结点的入边。
+找结点的出边：顺着绿色线路找 找结点的入边：顺着橙色线路找
+空间复杂度：O(|V|+|E|)
+邻接多重表 只能用于无向图。
+弥补邻接矩阵和临界表的缺点：即节省空间，又不会把一条边存储两遍（便于删除边和顶点）。
+空间复杂度：O(|V|+|E|)
+图的基本操作 图的遍历 广度优先遍历 对比树的广度优先遍历（层次遍历）：可知图的BFS需要标记哪些顶点被访问过，其它方面与树的BFS相同。
+图的广度优先遍历（Breadth-First-Search, BFS）：
+找到与一个顶点相邻的所有顶点：FirstNeighbor(G, x) NextNeighbor(G, x, y) 标记哪些顶点被访问过：bool visited[MAX_VERTEX_NUM] 需要辅助队列 代码实现：
+代码实现改进：对于非连通图，在BFS外再套一层循环。遍历寻找没有访问过的顶点，即一个连通分量，对它进行遍历。如图从1开始访问到8后，第一个BFS执行结束，再找到一个没有被访问过的结点即9，从9开始访问到11，完成。
+遍历序列的可变性：
+同一个图的==邻接矩阵==表示方式==唯一==，因此广度优先遍历序列、广度优先生成树==唯一== 同一个图的==邻接表==表示方式==不唯一==，因此广度优先遍历序列、广度优先生成树==不唯一==
+复杂度分析：
+空间复杂度：辅助队列的长度，最坏需要O(|V|)，如图中情况： 时间复杂度：分为==访问顶点==和==寻找相邻结点==两部分 访问顶点：O(|V|) 找相邻结点： 邻接矩阵存储：每个顶点找一次，每次需要遍历临界矩阵中的一行元素，即 O(|V|^2^) 邻接表存储：遍历每个顶点的单链表，即遍历所有边，即 O(|E|) （对于无向图是 O(2|E|)，等于O(|E|)） 综上：邻接矩阵存储：==O(|V|^2^)==，邻接表存储：==O(|V|+|E|)== 广度优先生成树：结点被访问时，是从哪条边过去的。由遍历序列的可变性可知，基于邻接表的广度优先生成树也不唯一。</description>
+    </item>
+    
+    <item>
+      <title>第5章 树与二叉树</title>
+      <link>/posts/ds/%E7%AC%AC5%E7%AB%A0-%E6%A0%91%E4%B8%8E%E4%BA%8C%E5%8F%89%E6%A0%91/</link>
+      <pubDate>Mon, 14 Nov 2022 23:50:49 +0000</pubDate>
+      
+      <guid>/posts/ds/%E7%AC%AC5%E7%AB%A0-%E6%A0%91%E4%B8%8E%E4%BA%8C%E5%8F%89%E6%A0%91/</guid>
+      <description>概念和性质 树可以是空树，森林可以是空森林。
+结点间的路径只能从上到下单向。 树的路径长度：从树根到每个结点的路径长度的总和。
+有序树/无序树：结点的左右位置是否反应某些逻辑关系。
+结点的度：该结点有几个孩子； 树的度：各结点的度的最大值。
+度为m的树：树中必存在有m个孩子的结点（一定是非空树，结点数≥m+1）；——孩子不区分左右次序 m叉树：结点的孩子数最多为m，可以不存在这样的结点，甚至可以是m叉空树。——区分左右次序
+性质：
+结点数=总度数+1（根节点没有被指向） m叉树 第$$i$$层最多有$$m^{i-1}$$个结点 度为m的树 第$$i$$层最多有$$m^{i-1}$$个结点 高度为h的m叉树 最多共$\frac{m^h-1}{m-1}$个结点（等比数列求和），最少h个结点 高度为h的度为m的树 最多共$\frac{m^h-1}{m-1}$个结点（等比数列求和），最少h+m-1个结点 具有n个结点的m叉树最小高度为 二叉树 满二叉树：每一层都长满（左孩子：2i，右孩子：2i+1，父节点：i/2取下界）
+完全二叉树：从上到下从左到右长的树，与满二叉树一一对应（区分叶子结点和非叶子结点：n/2取下界）
+二叉排序树：左&amp;lt;根&amp;lt;右，且左右子树都是一棵二叉排序树
+平衡二叉树：左右子树深度之差不超过1
+性质：
+==n~0~=n~2~+1==（叶子结点个数比二分支节点个数多一个） 假设结点总数为n，则n=n~1~+2n~2~+1=n~0~+n~1~+n~2~ 对于完全二叉树，给出结点总数可以求出n~0~，n~1~，n~2~ 突破口：最多只有一个度为1的结点，所以n~1~=0或1 n~0~=n~2~+1 存储结构 顺序存储：把二叉树的结点编号和完全二叉树对应起来。只适合完全/满二叉树，不然浪费空间。
+对于高度为n的二叉树，采用顺序存储，不管有多少个结点，都要用2^0^+2^1^+2^2^+&amp;hellip;=2^n^-1个存储单元。 链式存储：n个结点的二叉树有n+1个空指针域，可用来构造线索二叉树。(2n个链域，n-1个结点被指向，头结点没有被指向)
+二叉树定义
+// typedef int ElemType; struct ElemType { int value; } typedef struct BiTNode { ElemType data; struct BiTNode *lchild, *rchild; }BiTNode, *BiTree; // BiTNode *p; 等价于 BiTree p; BiTree root = NULL; 插入根结点
+root = (BiTree)malloc(sizeof(BiTNode)); root-&amp;gt;data = {1}; root-&amp;gt;lchild = NULL; root-&amp;gt;rchild = NULL; 插入新结点</description>
+    </item>
+    
+    <item>
+      <title>第4章 串</title>
+      <link>/posts/ds/%E7%AC%AC4%E7%AB%A0-%E4%B8%B2/</link>
+      <pubDate>Mon, 14 Nov 2022 23:50:36 +0000</pubDate>
+      
+      <guid>/posts/ds/%E7%AC%AC4%E7%AB%A0-%E4%B8%B2/</guid>
+      <description>线性表：具有相同数据类型的n个(n&amp;gt;=0)数据元素的有限序列，基本操作以==单个元素==为操作对象
+串：由零个或多个==字符==组成的有限序列，基本操作以==子串==为操作对象
+朴素模式匹配算法 int Index(SString S, SString T) { int i = 1, j = 1; while (i&amp;lt;=S.length &amp;amp;&amp;amp; j&amp;lt;=T.length) { if (S.ch[i] == T.ch[j]) { ++i; ++j; } else { i = i-j+2; j = 1; } } if (j &amp;gt; T.length) return i-T.length; else return 0; } 最坏：O(mn)
+a a a a a a b (n个) a a b (m个) KMP算法 O(m+n)：
+求next数组 O(m)：
+模式匹配过程 O(n)
+优化的KMP算法 </description>
+    </item>
+    
+    <item>
+      <title>第3章 栈、队列、数组</title>
+      <link>/posts/ds/%E7%AC%AC3%E7%AB%A0-%E6%A0%88%E9%98%9F%E5%88%97%E6%95%B0%E7%BB%84/</link>
+      <pubDate>Mon, 14 Nov 2022 23:50:26 +0000</pubDate>
+      
+      <guid>/posts/ds/%E7%AC%AC3%E7%AB%A0-%E6%A0%88%E9%98%9F%E5%88%97%E6%95%B0%E7%BB%84/</guid>
+      <description>栈、队列、数组具有相同的逻辑结构：线性 使用栈和队列把队列逆置：
+void Inverser(Stack &amp;amp;S, Queue &amp;amp;Q) { while(!QueueEmpty(Q)) { x = DeQueue(Q); Push(S, x); } while(!StackEmpty(S)) { Pop(S, x); EnQueue(Q, x); } } 栈 LIFO 栈的存储结构 顺序 定义（这里令top指向栈顶元素）
+#define MaxSize 10 typedef struct { ElemType data[MaxSize]; int top; } SqStack; 初始化
+SqStack S; InitStack(S); //令 top=-1 进栈
+bool Push(SqStack &amp;amp;S, ElemType x){ if (S.top == MaxSize-1) return false; S.top = S.top + 1; S.data[S.top] = x; // 上面两句也可以写成 S.</description>
+    </item>
+    
+    <item>
+      <title>第1章 绪论</title>
+      <link>/posts/ds/%E7%AC%AC1%E7%AB%A0-%E7%BB%AA%E8%AE%BA/</link>
+      <pubDate>Mon, 14 Nov 2022 23:50:09 +0000</pubDate>
+      
+      <guid>/posts/ds/%E7%AC%AC1%E7%AB%A0-%E7%BB%AA%E8%AE%BA/</guid>
+      <description>数据结构三要素：
+逻辑结构 集合 线性：一对一 树：一对多 图：多对多 物理结构/存储结构 连续：顺序 离散：链式、索引、散列 运算 栈是一种抽象数据类型，可采用顺序或者链式存储，只表示逻辑结构。
+数据的逻辑结构独立于存储结构；存储结构是逻辑结构在计算机上的映射，不独立于逻辑结构。
+链式存储设计时，结点间可以是离散的，但是结点内的存储单元地址必连续。
+不同的数据结构，逻辑结构和物理结构完全有可能相同。比如二叉排序树可以采用二叉树的逻辑表示和存储方式。
+相同逻辑结构，在不同物理结构下，运算的效率可能不同。比如线性表在顺序存储方式下，插入删除元素的时间复杂度是O(n)，在链式存储下为O(1)。
+算法的五大特征：
+有穷性 确定性 可行性 输入 输出 算法的目标：
+正确性 可读性 健壮性 效率与低存储量需求 算法原地工作：所需辅助空间为常量
+将长度为m、n的升序链表合并为一个升序/降序链表，最好情况下的时间复杂度为O(min(m, n))，最坏为O(m+n-1)即O(max(m, n))
+斐波那契数列
+递归 O(2^n^)
+#include&amp;lt;iostream&amp;gt; using namespace std; long Fibonacci(int n) { if (n == 0) return 0; else if (n == 1) return 1; else return Fibonacci(n - 1) + Fibonacci(n-2); } int main() { cout &amp;lt;&amp;lt; &amp;#34;Enter an integer number:&amp;#34; &amp;lt;&amp;lt; endl; int N; cin &amp;gt;&amp;gt; N; cout &amp;lt;&amp;lt; Fibonacci(N) &amp;lt;&amp;lt; endl; system(&amp;#34;pause&amp;#34;); return 0; } 非递归 O(n)</description>
+    </item>
+    
+    <item>
+      <title>第2章 线性表</title>
+      <link>/posts/ds/%E7%AC%AC2%E7%AB%A0-%E7%BA%BF%E6%80%A7%E8%A1%A8/</link>
+      <pubDate>Mon, 14 Nov 2022 23:48:49 +0000</pubDate>
+      
+      <guid>/posts/ds/%E7%AC%AC2%E7%AB%A0-%E7%BA%BF%E6%80%A7%E8%A1%A8/</guid>
+      <description>线性表是逻辑结构，顺序表链表是存储结构
+给定n个元素的一维数组，建立一个有序单链表的时间复杂度最小是 O(nlog~2~n)：排序最短O(nlog~2~n)，建表O(n)
+时间复杂度分析 尾插 头删 单链表/双链表 O(n) O(1) 不带头结点的单循环链表 O(n) O(n) 不带头结点有尾指针的单循环链表 O(1) O(1) 有无头结点对头插的影响：没有头结点，需要遍历到表尾才能将尾节点指向插入的结点，复杂度为O(n)；有头结点为O(1)
+概念 逻辑结构（定义）：具有相同数据类型的n（==&amp;gt;=0==）个数据元素的有限序列
+物理结构：
+顺序存储
+顺序表 静态分配空间 动态分配空间 链式存储
+单链表 双链表 循环链表 静态链表（借助数组实现） 基本操作：
+- InitList(&amp;amp;L) - Length(L) - LocateElem(L, e) - GetElem(L, i) - ListInsert(&amp;amp;L, i, e) - ListDelete(&amp;amp;L, i, &amp;amp;e) 用e返回删除的元素 - PrintList(L) - Empty(L) - DestroyList(&amp;amp;L) 顺序表 特点：元素的逻辑顺序和物理顺序相同，随机存取，存储密度高，插入删除需移动大量元素。
+实现方式 静态分配 typedef int ElemType; #define MaxSize 50 typedef struct { ElemType data[MaxSize]; int length; }Sqlist; 动态分配 #define MaxSize 50 #define InitSize 50 typedef struct { ElemType *data; int length; }Sqlist; Sqlist L; L.</description>
+    </item>
+    
+  </channel>
+</rss>

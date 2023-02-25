@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Categories on Home</title>
+    <link>/categories/</link>
+    <description>Recent content in Categories on Home</description>
+    <image>
+      <title>Home</title>
+      <url>%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 21 Feb 2023 16:29:43 +0000</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Computer Network</title>
+      <link>/categories/computer-network/</link>
+      <pubDate>Tue, 21 Feb 2023 16:29:43 +0000</pubDate>
+      
+      <guid>/categories/computer-network/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DB</title>
+      <link>/categories/db/</link>
+      <pubDate>Tue, 21 Feb 2023 16:29:43 +0000</pubDate>
+      
+      <guid>/categories/db/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Formal Languages and Automata</title>
+      <link>/categories/formal-languages-and-automata/</link>
+      <pubDate>Tue, 21 Feb 2023 16:29:43 +0000</pubDate>
+      
+      <guid>/categories/formal-languages-and-automata/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>OS</title>
+      <link>/categories/os/</link>
+      <pubDate>Tue, 21 Feb 2023 16:29:43 +0000</pubDate>
+      
+      <guid>/categories/os/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Principles of Compiler</title>
+      <link>/categories/principles-of-compiler/</link>
+      <pubDate>Tue, 21 Feb 2023 16:29:43 +0000</pubDate>
+      
+      <guid>/categories/principles-of-compiler/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Principles of Computer Organization</title>
+      <link>/categories/principles-of-computer-organization/</link>
+      <pubDate>Tue, 21 Feb 2023 16:29:43 +0000</pubDate>
+      
+      <guid>/categories/principles-of-computer-organization/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>/categories/python/</link>
+      <pubDate>Sat, 18 Feb 2023 22:55:42 +0800</pubDate>
+      
+      <guid>/categories/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DS</title>
+      <link>/categories/ds/</link>
+      <pubDate>Tue, 15 Nov 2022 00:08:41 +0000</pubDate>
+      
+      <guid>/categories/ds/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>NLP</title>
+      <link>/categories/nlp/</link>
+      <pubDate>Fri, 08 Apr 2022 11:25:09 +0000</pubDate>
+      
+      <guid>/categories/nlp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ML</title>
+      <link>/categories/ml/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/ml/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

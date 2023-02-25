@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Python on Home</title>
+    <link>/tags/python/</link>
+    <description>Recent content in Python on Home</description>
+    <image>
+      <title>Home</title>
+      <url>%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 18 Feb 2023 22:55:42 +0800</lastBuildDate><atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python基础</title>
+      <link>/posts/python/python%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Sat, 18 Feb 2023 22:55:42 +0800</pubDate>
+      
+      <guid>/posts/python/python%E5%9F%BA%E7%A1%80/</guid>
+      <description>变量 变量的赋值传递通过引用 改变x的值，y的值也变
+拷贝 浅拷贝——复制表层（默认，更快） 对于一维列表：拷贝整个列表对象。修改原本不影响副本。功能相当于深拷贝
+对于嵌套列表：只拷贝外层对象，而内层对象拷贝的是引用
+❌： 副本也被修改，此时需要用深拷贝
+下面的B即浅拷贝： 深拷贝——完全复制 copy：浅拷贝
+deepcopy：深拷贝，拷贝每个子对象
+交换两个变量 x, y = y, x
+随机数攻击 浮点数操作 复数 数字操作 短路逻辑 运算符优先级 流程图 条件表达式 判断素数 列表 切片 方法 增 append/extend：在末尾添加一个元素/可迭代对象
+用切片的方法在末尾添加： insert(pos, element)： 删 remove：只删除第一个，没有就报错
+pop：删除指定下标元素
+clear
+改 指定下标替换元素原理： 排序、倒序： 查 count、index函数： 列表推导式 速度比循环快。
+循环修改原来的列表，列表推导式创建新的列表然后赋值。
+用列表推导式创建嵌套列表（这样各个子列表互不影响）： 列表推导式的嵌套 实现 笛卡尔乘积： kiss原则： 元组 打包解压
+不可修改
+没有元组推导式，有生成器： 生成只有一个元素的元组： 序列类型对象的打包解包（多重赋值的实现原理）： 元组内的可变元素是可变的： 字符串 回文数判断 方法 拆分：
+拼接：join比+快
+格式化字符串 f-string python 3.6
+序列——列表 元组 字符串 列表：可变序列</description>
+    </item>
+    
+  </channel>
+</rss>

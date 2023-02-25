@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>汉语词形态分析 on Home</title>
+    <link>/tags/%E6%B1%89%E8%AF%AD%E8%AF%8D%E5%BD%A2%E6%80%81%E5%88%86%E6%9E%90/</link>
+    <description>Recent content in 汉语词形态分析 on Home</description>
+    <image>
+      <title>Home</title>
+      <url>%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 08 Apr 2022 11:25:09 +0000</lastBuildDate><atom:link href="/tags/%E6%B1%89%E8%AF%AD%E8%AF%8D%E5%BD%A2%E6%80%81%E5%88%86%E6%9E%90/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Chapter3 - Chinese Lexical Morphology</title>
+      <link>/posts/nlp/chapter3-chinese-lexical-morphology/</link>
+      <pubDate>Fri, 08 Apr 2022 11:25:09 +0000</pubDate>
+      
+      <guid>/posts/nlp/chapter3-chinese-lexical-morphology/</guid>
+      <description>汉语词形态分析 [toc]
+汉语切分基础 回顾词形态分析的两个基本任务：
+外部：断词——确定词的外部边界 内部：词形还原——内部结构分析 汉语是独立语，主要在于断词，即汉语切分/分词。词性还原基本没有。
+汉语切分任务说明 关于汉语的词的定义/看法：大方之家们各持己见 ··································································由”词“到”切分单元“：汉语切分而非汉语切词 不同的切分标注：反映在各自的切分数据上 汉语切分的两个主要难点问题 边界歧义（Boundary Ambiguity）：从哪里切分
+交集歧义（Overlap ambiguity: OA）：XJ/Y/ and X/JY/
+检测：通过FMM(正向)和BMM(负向)最大匹配算法。链长为奇数(ABC,ABCDE)的两者切分结果不同，可基于此检测到歧义；链长为偶数(ABCD)，结果相同，检测不出
+组合歧义（Combination ambiguity: CA）：X/Y/ and XY/，即 X、Y、XY都是词典中的词
+还有 混合歧义 真实歧义 伪歧义
+未登录词（Out of Vocabulary: OOV）（Unknow words）：词典/训练数据中没有此切分单元
+如：派生词、命名实体、新词 边界歧义常与OOV混合出现 朴素的切分算法——基于规则 前向最大匹配算法 FMM forward maximum match
+早期一个朴素的切分算法，基于词表
+例：
+算法参数：最大匹配长度 MaxLen = 3
+切分句子：语言学很重要
+过程：取”语言学“查词表，在其中，ok；取”很重要”，不在词表中；取“很重”，不在；取“很”，不在，但是只有一个字，ok；取“重要“，在，ok
+算法影响因素：
+MaxLen：太小，不能切对长的词；太大，经常回退；合适的=词表的平均词长+1/+2 词典 性能评估：
+评测数据（带有标准答案的数据）
+评测指标：常用 P/R/F1
+后向最大匹配算法 BMM backward maximum match
+基于规则的切分方法总结 FMM BMM
+简单快速，可以用来发现OA
+不能提供高质量的切分，没有进行不同切分选择的消歧能力：
+OA：总是切分成 XJ/Y（而BMM总是切分成 X/JY，所以用他俩可以检测歧义 CA：总是把XY切分为一个词 OOV：不能处理，一般切成单个字（也可提供某种信息） 扩展以处理歧义：</description>
+    </item>
+    
+  </channel>
+</rss>

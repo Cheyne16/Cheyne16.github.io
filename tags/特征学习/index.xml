@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>特征学习 on Home</title>
+    <link>/tags/%E7%89%B9%E5%BE%81%E5%AD%A6%E4%B9%A0/</link>
+    <description>Recent content in 特征学习 on Home</description>
+    <image>
+      <title>Home</title>
+      <url>%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="/tags/%E7%89%B9%E5%BE%81%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>3-特征降维和特征学习</title>
+      <link>/posts/ml/3-%E7%89%B9%E5%BE%81%E9%99%8D%E7%BB%B4%E5%92%8C%E7%89%B9%E5%BE%81%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/ml/3-%E7%89%B9%E5%BE%81%E9%99%8D%E7%BB%B4%E5%92%8C%E7%89%B9%E5%BE%81%E5%AD%A6%E4%B9%A0/</guid>
+      <description>深度学习 &amp;lt;&amp;mdash; 无监督特征学习
+介绍 特征是关于样本属性和特性的集中描述。多特征大样本提供了丰富的信息，然而
+采集大规模数据往往很困难 一些特征区分样本的能力可能较差 一些特征之间可能存在相关性（房屋年龄、房屋新旧程度） 盲目减少特征可能损失很多信息 为什么要特征降维（特征选择）：发现主要的特征
+为什么要特征学习：有效的表示特征
+有哪些数学手段：
+主成分分析（ Principle Component Analysis ） 独立成分分析（Independent Component Analysis） 线性判别分析（ Linear Discriminant Analysis） 等 PCA 通过特征值分解获取原始数据的新的特征或表示（主成分）：
+是原始特征或表示的线性组合 彼此不相关（正交） 尽可能多地捕捉样本的原始方差 基本概念 方差、协方差：度量偏离均值的程度
+方差：描述某一维度上的偏离程度
+协方差：描述两个变量偏离各自均值的程度，从而表现其相关程度
+协方差矩阵：描述多个变量。。。
+步骤 结果：特征降维后得到正交的特征，且每一维的方差都很大
+目标：寻找能够解释输入数据的方差的一组少量的正交的“方向”，将输入数据映射到这些“方向”上
+假设：
+数据是连续的（实际是离散的） 输入数据和学习得到的表示成线性关系 过程：
+数据中心化（减去均值） 计算特征协方差矩阵C~d×d~ 计算C的m个最大特征值及其对应的特征向量~m×m~：得到m个主成分 Tips：通过np.linalg.eig计算得到的特征值并不是按照一定次序排列的，特征向量的每一列对应每一个特征值。 这些特征向量构成新的矩阵U~d×m~，进而将每一个d维的样本x映射到新的低维向量 z~m×1~ = U^T^~m×d~x~d×1~==（为什么不生成1×m的？一般的数据应该都是横向量吧？maybe：np.cov计算时默认每一行是一个属性，每一列是一个样本，可能这是规范形式）== 与SVD词向量分解不同之处：分解的原始矩阵不同，SVD是词共现矩阵。
+两种证明思路 两种视角：最大化方差、最小化错误（等价的）
+最大化方差 直觉：因为方差包含重要信息，所以希望降维后方差依然很大 计算：给定一个初始方向，计算样本点映射后的方差，优化方向使方差最大。 结果：公式推导可得，方差=协方差矩阵的特征值，所以，要使方差最大，应选择最大的特征值，用这些特征值对应的特征向量，构建新的正交基。有了正交基，即可计算样本点降维后的表示。 最小化错误（最小化重构误差） 基本思想：降维后的x与原来的x相差越小越好 计算：公式推导得，误差应取协方差矩阵的(d-m)个最小特征值的和 结果：构成主成分子空间的特征向量就是协方差矩阵的m个最大特征值所对应的特征向量 总结 简单有效
+非线性问题PCA则无法发挥其作用
+多数情况下，难以解释PCA所保持的主成分的意义
+PCA将所有的样本作为一个整体对待，而忽略了类别属性
+Autoencoder Autoencoder是一种采用无监督方式进行 特征学习的神经网络。</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>聚类分析 on Home</title>
+    <link>/tags/%E8%81%9A%E7%B1%BB%E5%88%86%E6%9E%90/</link>
+    <description>Recent content in 聚类分析 on Home</description>
+    <image>
+      <title>Home</title>
+      <url>%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="/tags/%E8%81%9A%E7%B1%BB%E5%88%86%E6%9E%90/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2-聚类分析</title>
+      <link>/posts/ml/2-%E8%81%9A%E7%B1%BB%E5%88%86%E6%9E%90/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/ml/2-%E8%81%9A%E7%B1%BB%E5%88%86%E6%9E%90/</guid>
+      <description>有监督学习：分类、回归、目标检测、语义切分、图像描述。
+无监督学习：学习关于数据的某种隐藏结构。聚类、特征降维、特征学习、密度估计。
+聚类 类簇划分的角度：
+良态可分类 基于最近邻的聚类 基于密度的聚类 基于中心点的聚类 基于共有属性或概念的聚类 聚类方法：
+基于划分（Partitional Clustering） 基于层次（Hierarchical clustering） 自顶向下 自底向上 其它： 排它性聚类 vs. 非排它性聚类 模糊聚类 vs. 非模糊聚类 部分聚类 vs. 完全聚类 异构型聚类 vs. 同构型聚类 聚类模型 K-means 基于中心点
+思想：类内距离最小化，类间距离最大化
+算法过程：
+假设有k个类簇，每个簇一个中心点(centriod)【中心点可看作有监督学习中的标签y】
+将每个样本点划分到距离最近的中心点所属的簇中
+迭代：
+更新每个簇的中心点 然后重新划分 直到中心点不变
+转换为有监督学习模型 目标函数：每个样本点与其簇中心点的距离之和。这里的距离可以是各种距离。
+μk 表示簇Ck 的中心点（或其它能代表Ck的点） 若x~n~被划分到簇C~k~则r~nk~=1，否则r~nk~= 0 优化目标：找到簇的中心点μk及簇的划分r~nk~使得目标函数SSE最小
+算法过程：
+choose some initial values for the μ~k~ (k=1,&amp;hellip;,K)
+迭代：
+minimize SSE with respect to the r~nk~ (n=1,&amp;hellip;,N)
+minimize SSE with respect to the m~k~</description>
+    </item>
+    
+  </channel>
+</rss>

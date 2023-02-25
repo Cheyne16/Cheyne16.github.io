@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Computer Network on Home</title>
+    <link>/tags/computer-network/</link>
+    <description>Recent content in Computer Network on Home</description>
+    <image>
+      <title>Home</title>
+      <url>%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 21 Feb 2023 16:29:43 +0000</lastBuildDate><atom:link href="/tags/computer-network/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ch1 概述</title>
+      <link>/posts/computer-network/ch1-%E6%A6%82%E8%BF%B0/</link>
+      <pubDate>Tue, 21 Feb 2023 16:29:43 +0000</pubDate>
+      
+      <guid>/posts/computer-network/ch1-%E6%A6%82%E8%BF%B0/</guid>
+      <description>ch1思考问题：既然互联网的数据链路层和物理层不是一样的，那这两层如何通信的？
+Internet ：起源于美国的那个网 internet ：互联网
+Measure line speeds: (megabits/sec) 1 Mbps = 1,000,000 bits/sec (gigabits/sec) 1 Gbps = 1,000,000,000 bits/sec
+​	TB PB
+应用层的两种服务模式：p2p 和 CS
+1. 什么是计算机网络 通信vs计算机：通信-传输信息；计算机-处理信息 分布式系统和计算机网络：分布式系统对于用户来说是透明、不可见的，是单一的系统，用户不会知道实际机器的存在。如 www。而计算机网络的异构性对用户是可见的。总结：两者硬件相同，都是独立的计算机构成的集合；区别在于软件（尤其是操作系统）。分布式系统是建立在网络之上的软件系统。 2. 计算机网络是干什么的 3. 计算机网络的分类 传输技术：
+点到点链路 和 广播式链路 覆盖范围（最常用）：
+覆盖范围 典型网络的种类 代表性设备 应用场景 PAN 个域网 1m 个人 master-slave paradigm （主从范式） 蓝牙 LAN 局域网 10m-1km 企业、家庭 广播式链路 有线：以太网（Ethernet）无线：WLAN（wifi） privately owned MAN 城域网 10km 城市 有线：有线电视网(Cable TV) 无线：WiMax (IEEE802.16) WAN 广域网 100km-1000km 全国 有线：拨号上网服务无线：3G,4G,5G 通信子网、交换设备与路由交换技术 Internet 互联网 10000km 世界 ISP（移动电信联通、教育网提供商） 以太网：每台计算机都使用以太网协议，并通过点对点链路连接到一个称为交换机的盒子</description>
+    </item>
+    
+    <item>
+      <title>ch2 物理层</title>
+      <link>/posts/computer-network/ch2-%E7%89%A9%E7%90%86%E5%B1%82/</link>
+      <pubDate>Tue, 21 Feb 2023 16:29:43 +0000</pubDate>
+      
+      <guid>/posts/computer-network/ch2-%E7%89%A9%E7%90%86%E5%B1%82/</guid>
+      <description>总结 有线和无线？？？ 无线传输比有线传输：易出错，时延长，不安全；可定位，（带宽高？）
+有线电视：同轴电缆 粗缆 卫星电视：卫星 数字电视？
+电信号：高低电平 光信号：有 无 （强度会有不同）
+各种传输介质总结 物理结构 工作原理 传输特性 分类 典型应用 磁性介质 磁带或可移动介质 人工运输 实际效率高 U盘 双绞线 two insulated copper wires 相互抵消，减少损耗 模拟/数字信号皆可速度在Mbps级别 UTP/STP(好) 最常用 同轴电缆 铜。 high bandwidth(1GHz)；excellent noise immunity 粗缆（数字信号）；细缆（模拟信号） 粗：以太网；细：有线电视 光纤 发送端-光纤-接收端；接口 光的全反射 High bandwidthLightweightSecurity 多模（互相影响）；单模（好） 无线电波 发射站-接收站 电磁波 地面传输&amp;lt;2MHz；天际传输2-30MHz；视距传输&amp;gt;30MHz 微波 Distance between repeaters: 80km 波以近乎直线的方式传播，发射和接收天线必须精确对准。 100M~10GHz；易受天气影响 the long-distance telephone transmission system 卫星 充当大型微波中继器 延时长；广播传播；成本与距离无关 GEO；MEO；LEO （第三周第一次 课前回顾复习）2.1 Basic Concepts on Data Communications 带宽 有两种：</description>
+    </item>
+    
+    <item>
+      <title>ch3 数据链路层</title>
+      <link>/posts/computer-network/ch3-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/</link>
+      <pubDate>Tue, 21 Feb 2023 16:29:43 +0000</pubDate>
+      
+      <guid>/posts/computer-network/ch3-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/</guid>
+      <description>数据链路层 地位、功能 为网络层传来的packet加头和尾（即协议），再以frame形式的PDU传送给对等层，对等层通过成帧技术得到数据。 尾：检错码
+该层功能在网卡上实现（小部分在操作系统驱动实现），所以功能不宜太复杂，而且现在物理传输介质比较好，所以甚至可以不用在链路层考虑差错控制（如 物理层用光纤）。现在的网卡和主机不分离，是一体的。
+提供给网络层的三类服务： （丢失 差错 乱序 重复）
+无连接服务： 无确认的： eg：UDP 1）应用层需要实时性高（时延、带宽）的服务，不在意传输质量（误码率）&amp;mdash;&amp;mdash; 实时音视频通信；2）底层物理传输介质非常好。 比如：有线局域网（有线、近距离 &amp;ndash;&amp;gt; 干扰少误码少） eg：以太网 有确认的： eg：无线系统，如 wifi &amp;mdash;&amp;gt; 因为网络传输链路质量不好，所以需要确认。 1）传输正确发确认信息（ACK），用的多。 eg: TCP 2）传输错误发确认信息（NAK） 有确认的面向连接服务：1）高层需要可靠传输；2）链路不好，距离长，易误码。 eg：TCP 技术 成帧 字符填充 和 比特填充 一样，只不过适用于不同协议（以字符/比特传输）。
+前三个效率都不到100%。
+可能多种技术并用，如 以太网 &amp;mdash; 第1+4种。
+差错控制 错误种类：单个错误（常见），多个错误，数据包丢失
+纠错 （适合易出错的信道） 前向纠错（FEC）：接收方能够检测并纠正错误，如 海明码 自动请求重传（ARQ）：适合误码率小于 10^-5^ 的信道。 检错 + 重传 （适合质量好的信道） 奇偶校验 交错校验 CRC （循环冗余校验）&amp;mdash;- 利用二进制除法 流量控制 和 差错控制 是结合在一起的
+基于反馈的流量控制 &amp;mdash;- 6个协议，前三个：单工（一发一收）；后三个：双工 停等：一个帧，等一下。
+​	太慢。尤其对带宽时延积大的，浪费信道。</description>
+    </item>
+    
+    <item>
+      <title>ch4 MACSublayer</title>
+      <link>/posts/computer-network/ch4-macsublayer/</link>
+      <pubDate>Tue, 21 Feb 2023 16:29:43 +0000</pubDate>
+      
+      <guid>/posts/computer-network/ch4-macsublayer/</guid>
+      <description>物理层：repeater 识别bit，是一个冲突域
+介质访问控制子层
+4.1 信道分配问题 静态信道分配
+动态信道分配（√）
+4.2 多路访问协议 4.2.1 ALOHA 纯 ALOHA 冲突时间：2T~tran~（发送时延、帧时） &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash;（发送前T 和 发送时 T）
+想发就发
+在一个RTT内接收ACK，如果没有或者NAK，退避随机时间再重发
+时隙 ALOHA 冲突时间：T~tran~ &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash;（发送前T）
+将时间分片（槽），发帧和重传只能在槽的开始发送
+比 pure ALOHA吞吐量高，效率高
+4.2.2 CSMA Carrier Sense Multiple Access Protocols
+CS：载波监听。检测电压摆动值。
+MA：多点接入。
+局域网中：==传播时间远远小于发送时间==，因为是在局域网内，距离短
+协议思想：
+发送之前，先监听信道（避免）
+信道空闲：以一定概率发送帧
+信道忙：等待直到信道空闲
+非坚持CSMA：等待一个随机时间再重新监听载波
+坚持CSMA：一直监听着
+1-坚持CSMA：一直监听信道，空闲了直接发送 p-坚持CSMA：一直监听信道，空闲了以概率p发送，以概率p-1延迟一个随机时间后再发送 如果冲突：等待一个合理时间（RTT+ACK竞争时间）
+如果未收到ACK，则重传
+CSMA比较：
+1-坚持 非坚持 低负载 高吞吐量、低延迟 高负载 低吞吐量 高吞吐量 评价MAC协议的指标： （低负载适合使用竞争方法）
+低负载（轻载）情况下的时延
+高负载（重载）情况下的吞吐量（信道利用率）
+冲突时间：τ（propagation delay）
+CSMA/CD ==以太网== IEEE 802.3 半双工通信系统；节省时间和宽带；以太网的技术基础
+基本思想：
+载波监听（避免冲突） 冲突检测（处理冲突）——边发边检测冲突，检测到冲突后：停止发送 + 发送jam信号 冲突检测原理：发的同时往回收，检测信号是否相同 无线网络发出的信号是接受信号的100万倍强度，覆盖了，收不回； 还与调制模式有关 退避（处理冲突）——等待随机时间后重传 状态：CSMA/CD 可能处于以下三个状态之一: 竞争，传输，空闲。</description>
+    </item>
+    
+    <item>
+      <title>ch5-NetworkLayer</title>
+      <link>/posts/computer-network/ch5-networklayer/</link>
+      <pubDate>Tue, 21 Feb 2023 16:29:43 +0000</pubDate>
+      
+      <guid>/posts/computer-network/ch5-networklayer/</guid>
+      <description>问题 分组和分片的区别 adhoc网络——随机选路，哪学的 flooding序列号 复习Dijkstra DVR构造路径的过程 DVR好消息快，坏消息慢 学习拥塞控制前三个 111页实例 119 计算 习题知识点 电路交换预先分配资源，分组交换（虚电路、数据报）不会 任务 互联——不同网络 编址——统一地址，每个网络接口一个地址 分组——封装上层包，将其拆分成组 分片——适应不同的数据链路层技术 路由选择——路由器 为传输层提供的服务 虚电路 和 数据报
+技术 路由算法 路由表 = 路由算法（DVR, LSR, PVR） + 路由协议（ 动态路由协议：RIP, OSPF, BGP）
+路由算法：静态 or 自适应
+最优化原则：两点间有更短的路径则更新拓扑
+Dijkstra的“最短路径”算法：自己复习
+选路策略：固定查表选路；洪泛(flooding）；随机选路；==自适应选路==
+分级/层次路由：。。。
+路由算法 Flooding （Distance Vector Routing）DVR (Link State Routing) LSR router所记录的 无需路由表 路由表：到每个节点的距离和下一跳 entire topology（只记录下一跳） 转发给 所有邻居（除incoming link） 所有邻居 **flooding **==LSP==（acked）（reliably） 转发时间 间隔性（RIP：30s） 拓扑改变时 五个过程：&amp;hellip;&amp;hellip; 超时删除记录（RIP：180s） LSP包：包含邻居的拓扑信息LSP包的构造：周期性/发生变故时集齐后，每个路由器计算自己的最短路径 应用 RIP (Routing Information Protocol) Cisco EIGRP (Enhanced Interior Gateway Routing Protocol) IS-ISOSPF 问题 重复 收敛慢好消息扩散快，坏消息传播慢无穷计数问题==基于谣传的选路== 解决方案 1-跳计数器递减至02-记录序列号 BGP-4 (Border Gateway Protocol) IDRP (Inter-domain Routing Protocol) 拥塞控制 增加资源 网络提供 业务量感知的路由 减少负载 接纳控制 业务量减速 负载掉落 前三个：闭环方案，避免。。。自己学 后两个：开环方案，处理</description>
+    </item>
+    
+    <item>
+      <title>ch6-TransportLayer</title>
+      <link>/posts/computer-network/ch6-transportlayer/</link>
+      <pubDate>Tue, 21 Feb 2023 16:29:43 +0000</pubDate>
+      
+      <guid>/posts/computer-network/ch6-transportlayer/</guid>
+      <description>传输层 传输层
+端口 用于区分应用层的不同进程
+端口号16位
+一个IP地址和一个端口号绑定一个套接字(socket)。不允许两个套接字监听同一端口
+连接的建立与释放 三次握手建立连接
+Client请求连接(seq = x) Server确认请求(seq = y, ACK = x) Client确认请求并发送数据(seq = x + 1, ACK = y) 如果Client发送了重复的请求，Server回复后Client需要用REJECT来释放重复链接
+三次握手+定时器释放连接
+连接释放方式：violent / graceful（单独释放）
+TCP 传输控制协议(Transmission Control Protocol)
+面向连接的服务
+全双工点对点通信
+完全可靠
+（无丢失、重复、乱序）
+具有自动重传机制，就算某机器断网重连了，原有通信也可以继续进行 一个TCP连接中一端崩溃或突然中断时称为半开连接，TCP设置了定时器定时探测是否出现了半开连接 可靠的连接建立与释放
+协议头 长度可变。计算时默认按照20字节计算
+源端口 &amp;amp; 目的端口 两字节/16位 序号 通信双方需要商定初始序号 4字节/32位 数据字段每有一个字节，序号+1 确认号ACK 4字节/32位 期望收到的下一个报文段数据的第一个字节的序号 比如收到的包的序列号是x，那么回复的ACK确认号应该是x+1 采用了捎带确认和累计确认技术 数据偏移 4位 因为TCP头长度不定，数据偏移用来说明数据部分在TCP包内的位置 单位为4字节/32位 保留字段 6位，应该置0 紧急比特URG 置1时紧急指针字段有效 确认比特ACK 置1时确认号ACK字段有效 推送比特PSH 置1时接收方一旦受到包就上交应用层而不填满缓冲区 复位比特RST 置1时表明传输出错，释放连接并重连 同步比特SYN 置1时表明这是连接请求或连接接收报文 终止比特FIN 置1时用来释放连接 窗口字段 2字节/16位 通知对方自己的接收窗口，使对方调整发送的数据量 单位为字节 校验和 2字节/16位 校验首部与数据 计算时要在TCP报文段前面加上12字节的伪首部，伪首部仅参与校验和的计算，不向上向下传递 计算方式和IP校验和计算方式相同 紧急指针 2字节/16位 指出本报文段中的紧急数据的最后一个字节的序号 选项字段 长度可变 TCP只规定了一个选项 - 最大报文段长度MSS(Maximum Segment Size) 告知对方本机的缓存的接受能力 默认值为536，单位为字节 来自IP网络层的限制，IP包头的**总长度字段(Total Length)**16位限制一个IP包内最多65535字节，减去IP协议头和TCP协议头，最大为65535-20-20=65495字节 来自数据链路层（以太网）MTU的限制，最大为1460字节 TCP连接的建立和释放 建立连接 三次握手 主动请求连接的进程为客户(Client) 被动接受连接的进程为服务器(Server) 释放连接 TCP是全双工通信，拥有两个单向连接，需要分别释放 四次握手，每释放一个单向连接需要两次握手 TCP连接建立过程（三次握手）：</description>
+    </item>
+    
+    <item>
+      <title>ch7-应用层</title>
+      <link>/posts/computer-network/ch7-%E5%BA%94%E7%94%A8%E5%B1%82/</link>
+      <pubDate>Tue, 21 Feb 2023 16:29:43 +0000</pubDate>
+      
+      <guid>/posts/computer-network/ch7-%E5%BA%94%E7%94%A8%E5%B1%82/</guid>
+      <description>应用层 应用层
+许多协议都是基于客户-服务器方式(CS)
+DNS - Domain Name System 32位的IP地址难于记忆。DNS实现符号地址到IP地址的转换。DNS域名最长为256字节（包括符号）
+基于CS模式 基于UDP包 分布式数据库系统 基于域的多层次命名系统 因特网域名结构 任何一个连接在因特网上的主机或路由器都有一个唯一的层次结构的名字，即域名 域名的结构有若干个分量组成，各分量之间用.隔开，如XXX.三级域名.二级域名.顶级域名 各分量分别代表不同级别的域名 因特网采用了树状的命名方法，一个高级域名下有多个低级域名 域名解析流程 当应用程序（比如浏览器）需要进行域名解析时，它成为域名系统的一个客户，把域名放在DNS报文中向本地域名服务器发出请求。本地域名服务器找到IP地址后响应。
+本地域名服务器无法完成解析时，它临时变成其上级域名名服务器的客户，递归或迭代解析，知道域名解析完成
+递归解析 主机www.ibm.com获取xyz.usst.edu.cn的IP地址的过程如图
+高层服务器的态度是“好的我去给你找”，可以看到如果高层服务器（根域名服务器）的任务量非常重
+迭代解析 相同的问题，迭代解析过程如图
+高层服务器的态度是“你应该去这里找”，这样就减轻了高层服务器的任务量
+实际应用中使用迭代解析
+WWW万维网(World Wide Web) 简称WEB
+WEB的CS模型 每个WEB服务器上都有一个进程在TCP的80端口监听由浏览器发来的请求。连接建立后浏览器和服务器之间使用HTTP超文本传输协议进行信息传输
+HTTP协议基于TCP，工作流程：
+建立TCP连接 Client: HTTP请求报文 Server: HTTP响应报文 释放TCP连接 WEB需要的基本技术 统一资源定位符URL 超链接使用URL寻找网页 URL由三部分组成 协议类型 - HTTP/FTP/… 网页所在机器地址 - 域名或IP 网页文件名 URL的一般形式：&amp;lt;Protocol&amp;gt;://&amp;lt;Host&amp;gt;&amp;lt;:Port&amp;gt;&amp;lt;/Path&amp;gt; URL对大小写不敏感 超文本传输协议HTTP 基于TCP 虽然TCP面向连接，但是HTTP不是面向连接的服务，而是面向事务的，一旦事务结束就中断连接 服务器默认端口号80 报文结构图：
+注意首部结束之后无论有没有实体都要有一个空行
+请求报文 有两个方法：GET &amp;amp; POST，GET在url中附上请求内容，不能附带实体。POST不在url中附上请求，保密性更好。可以附带实体，如表单
+请求报文举例：已知一个HTML页面中有标签&amp;lt;a href=&amp;quot;www.info-source.com/welcome.html&amp;quot;&amp;gt;click here for info&amp;lt;/a&amp;gt;，点击超链接后发送的请求为：
+GET /welcome.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Formal Languages and Automata on Home</title>
+    <link>/tags/formal-languages-and-automata/</link>
+    <description>Recent content in Formal Languages and Automata on Home</description>
+    <image>
+      <title>Home</title>
+      <url>%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 21 Feb 2023 16:29:43 +0000</lastBuildDate><atom:link href="/tags/formal-languages-and-automata/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ch2-语言及文法</title>
+      <link>/posts/formal-languages-and-automata/ch2-%E8%AF%AD%E8%A8%80%E5%8F%8A%E6%96%87%E6%B3%95/</link>
+      <pubDate>Tue, 21 Feb 2023 16:29:43 +0000</pubDate>
+      
+      <guid>/posts/formal-languages-and-automata/ch2-%E8%AF%AD%E8%A8%80%E5%8F%8A%E6%96%87%E6%B3%95/</guid>
+      <description>2.1 语言的定义与运算 字符串的逆/倒置 闭包 *闭包：包括空串
++闭包：字母表T上的所有非空字符串构成的集合
+语言 设 T 为字母表，则任何集合 L ⊆ T* 是字母表T上的一个语言（language）
+语言的基本运算 L1L2 ≠ L2L1 语言的积不可交换
+2.2 文法 定义：所谓文法是用来定义语言的一个数学模型
+**元语言：**描述语言的语言。 文法是一种元语言，一种方法，根据文法产生出语言的句子
+BNF 巴科斯范式 BNF范式通常被作为讨论某种程序设计语言语法的元语言
+::= &amp;mdash;-&amp;gt; “定义为”
+Chomsky文法体系 将::= 改为→表示可被代替
+Chomsky文法体系中，任何一种文法必须包含有：
+两个不同的有限符号的集合，即非终结符集合N和终结符集合T。 一个形式规则的有限集合P（生成式集合）， 一个起始符S 文法的核心是生成式的集合，它决定了语言中句子的产生
+文法 形式定义：四元组（N, T, P, S）
+由定义可知，α不能为空，至少存在一个非终结符；β可以为空。
+推导与句型 产生式是单箭头，双箭头是推导的过程
+直接推导 推导序列
+推导序列的每一步，都产生一个字符串，这些字符串一般称为句型
+句型和句子
+由S经过文法G的推导序列得到的字符串α：
+若α ∈（N∪T）*，则 α 称为文法G的句型。 若α ∈T*，则 α 称为文法G的句子。 可知：句型包括句子。
+文法产生的语言 2.3 Chomsky文法体系分类 乔姆斯基文法体系回顾：
+文法 G = (N, T, P, S); P: α→β 其中 α∈(N∪T)* N^+^ (N∪T)* , β∈(N∪T)*</description>
+    </item>
+    
+    <item>
+      <title>ch3-有限自动机和右线性文法</title>
+      <link>/posts/formal-languages-and-automata/ch3-%E6%9C%89%E9%99%90%E8%87%AA%E5%8A%A8%E6%9C%BA%E5%92%8C%E5%8F%B3%E7%BA%BF%E6%80%A7%E6%96%87%E6%B3%95/</link>
+      <pubDate>Tue, 21 Feb 2023 16:29:43 +0000</pubDate>
+      
+      <guid>/posts/formal-languages-and-automata/ch3-%E6%9C%89%E9%99%90%E8%87%AA%E5%8A%A8%E6%9C%BA%E5%92%8C%E5%8F%B3%E7%BA%BF%E6%80%A7%E6%96%87%E6%B3%95/</guid>
+      <description>3.1&amp;amp;&amp;amp;3.2 有限自动机 具有离散 输入 输出系统的一种数学模型
+每次转换的后继状态是否唯一：DFA/NFA
+DFA-Deterministic finite automaton 定义：
+接收的语言：输入结束后使DFA的状态到达终止状态。否则该字符串不能被DFA接收.
+​	NFA-Nondeterministic finite automaton 对应一个输入,可以有多个转移, 到达不同的状态。具有在同一情况下可有不同选择的能力
+定义：
+接收的串：如果接收一个字符串后NFA进入一个状态集,而此集合中包含了一个F中的状态, 则称NFA接收该字符串.
+​	3.3 NFA与DFA的等价性 一方面：DFA是NFA的特例，即每次转移后的状态只有一个的特例。所以DFA能接收的语言，NFA必然能接收。
+另一方面：NFA能接收的语言，DFA必然能接收。这也可以证明，用子集构造法，对于任意一个NFA，构造一个接收同样语言的DFA。
+==NFA&amp;mdash;&amp;gt;DFA（子集构造法）== 原理思想：把NFA中每一步所到达的状态总体都当作DFA的一个状态
+过程：
+（写的时候得到一个添一个即可，不用直接写出所有状态）
+子集构造法得到DFA状态数：
+3.4 带 ε-转移的有限自动机 当输入为ε时，也能引起状态转移
+形式定义 增加了空转移
+ε-闭包 状态 q 的 ε- 闭包：记为 ε - CLOSURE 或 ECLOSE ，定义为从 q 经所有的 ε 路径可以到达的状态（包括q自身）
+状态子集I 的ε- 闭包：I 的各个元素的闭包的并集 Ia：I经过a到达的所有状态 的闭包的并集
+δ1(q0, 0) = ε-CLOSURE(δ(q0, 0)) ε-NFA的语言 其中：δ&amp;rsquo; 与 δ 不同，前者包含空转移。（经过每一个字符前后都考虑空转移）
+==ε-NFA&amp;mdash;&amp;gt;无εNFA== 具有ε转移的NFA是无ε转移的NFA的一般情况</description>
+    </item>
+    
+    <item>
+      <title>ch4-上下文无关文法与下推自动机</title>
+      <link>/posts/formal-languages-and-automata/ch4-%E4%B8%8A%E4%B8%8B%E6%96%87%E6%97%A0%E5%85%B3%E6%96%87%E6%B3%95%E4%B8%8E%E4%B8%8B%E6%8E%A8%E8%87%AA%E5%8A%A8%E6%9C%BA/</link>
+      <pubDate>Tue, 21 Feb 2023 16:29:43 +0000</pubDate>
+      
+      <guid>/posts/formal-languages-and-automata/ch4-%E4%B8%8A%E4%B8%8B%E6%96%87%E6%97%A0%E5%85%B3%E6%96%87%E6%B3%95%E4%B8%8E%E4%B8%8B%E6%8E%A8%E8%87%AA%E5%8A%A8%E6%9C%BA/</guid>
+      <description>没有一个普遍使用的算法，能够消除文法的二义性
+有的文法是先天二义性
+最左推导 对应 最右归纳；反之。。。
+CFG的简化——顺序：（1）231 1. 消无用符号 无用符号包括：不可达符号 和 非生成符号
+生成符号：从终结符往前找 可达符号：从起始符开始往后找 先用算法1消非生成符号，再用算法2消不可达符号，顺序不能反；
+并且消去相关产生式
+2. 消空产生式 可致空符号：能否经过一步或多步推出ε 如何计算：（1）一步可推出空（2）多步可推出空（B-&amp;gt;ACD,其中ACD都是可致空符号，则B也是）
+无空文法：若G的生成式中无任何ε产生式,或只有一个生成式S→ε且S不出现在任何生成式的右边,则称G为无e文法 消空产生式：（1）找出可致空符号集合N‘（2）对每个存在可致空符号，加入替换后的式子(不加入S→ε，删除原有的S→ε)==（3）==如果S是可致空符号，加入新的起始符号S1，加入S1-&amp;gt;S|ε
+3. 消单产生式 单产生式：形如 A -&amp;gt; B 的产生式，其中A、B 为非终结符
+单元偶对：（A，B）是单元偶对，当且仅当A经过一系列单产生式推出B
+消单产生式：对于每一个单元偶对（A，B），将B的所有非单产生式给到A
+4. 消除递归 直接 和 间接
+消除直接左递归 ==消除所有左递归== 生成式的标准形式（给机器看） Chomsky范式（CNF）：二叉树 ==先消空消单消无用在构成CNF==。
+Greibach范式 (GNF)：避免左递归 &amp;mdash;&amp;gt; CNF
+排序，代换（只代第一个字母）排序之后右边要么是终结符开头，要么相等，要么比左边大。若相等：消左递归
+消左递归：代换时可能会消左递归；An一定消左递归
+回代：可能会消左递归
+消除左递归引入的符号，越后引入的级别越低 A
+下推自动机 PDA(Push Down Automaton)
+PDA的形式定义：一个七元组M = (Q, T, Γ, δ, q0, z0, F)，其中
+Q 有限控制器状态集合 T 有限输入字母表 Γ 有限下推栈字母表 δ 状态转移函数 q0 初始状态 z0 下推栈起始符号 F 终态集合 转换函数的格式：δ(q, a, Z) = {(p, ω)}意为当前状态为q，当前栈顶为Z，接收字符a，转移为状态p，栈顶为ω。如果ω = ε则弹栈</description>
+    </item>
+    
+    <item>
+      <title>ch5-图灵机</title>
+      <link>/posts/formal-languages-and-automata/ch5-%E5%9B%BE%E7%81%B5%E6%9C%BA/</link>
+      <pubDate>Tue, 21 Feb 2023 16:29:43 +0000</pubDate>
+      
+      <guid>/posts/formal-languages-and-automata/ch5-%E5%9B%BE%E7%81%B5%E6%9C%BA/</guid>
+      <description>图灵机基础 图灵机与双向有限自动机的区别：图灵机可以改变“带(tape)”上的符号
+图灵机TM(Turing Machine)的形式定义：一个七元组M = (Q, T, Σ, δ, q0, B, F)
+Q 有限状态集 T 有限输入符号集 Σ 有限带符号集 δ 转移函数 q0 初始状态 B 特殊带符：空白符 F 终态集合 δ函数示例：δ(q, a) = (p, B, L)表示状态q接收输入a时转换为状态p，把带上面的a改写为B(空白符)，然后指针左移(L)
+图灵机的格局：使用w1qw2来描述图灵机的格局，其中q为当前状态，w1与w2为指针左侧和右侧带上的字符串。约定：w1qw2表示正在扫描w2的最左字符，也就是指针指向w2的最左字符。w2 = ε时视为扫描空白符
+图灵机的初态：处于状态q0（初始状态），指针在带的最左单元
+图灵机接受的语言：能够使图灵机进入终止状态的串
+停机：输入被接受时，图灵机将停止
+停机问题 停机问题：任意给定一个图灵机和一个输入的串ω，问此串能否使此图灵机停机？
+结论：停机问题不可解，即不可判定能否停机
+使用图灵机构造整数函数计算机 使用一进制表示数，即整数k被表示为k个0
+这样所有整数都可以通过不同数量的0（或其他字符）表示
+图灵机可以实现整数函数的构造。举例：用图灵机实现求真减法：
+if x &amp;gt; y then output x - y else output 0 那么初始带上的串应为0^x 1 0^y
+思路：自动机把最左端的0改为空白符，然后寻找1后面的0，把它改成1，然后再向左搜索，找到空白符，把空白符之后的0改成空白符，再向右搜，收到1后面的0改成1。。。如果最后发现左侧没有0而右侧还有0就把右侧的所有0变成1。最后统计带子上面的0的个数就是结果
+例2：设计图灵机接受L = {0^m | m = 2^n, n &amp;gt;= 0}</description>
+    </item>
+    
+  </channel>
+</rss>
